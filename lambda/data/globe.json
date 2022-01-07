@@ -1,0 +1,17 @@
+{
+    "templateData": {
+    "type": "object",
+    "objectId": "headlineSample",
+    "properties": {
+        "backgroundImage": {
+            "sources": [
+                {
+                    "url": "https://i.imgur.com/DvIrjNX.png",
+                    "size": "large"
+                }
+            ]
+        }
+    }
+}
+    
+}

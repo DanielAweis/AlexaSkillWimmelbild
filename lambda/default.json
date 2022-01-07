@@ -1,0 +1,31 @@
+{
+    "imageTemplateData": {
+        "type": "object",
+        "objectId": "imageSample",
+        "properties": {
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wallpaperflare.com%2Fstatic%2F376%2F891%2F666%2Fquestion-marks-figures-3d-question-wallpaper.jpg&f=1&nofb=1",
+                        "size": "large"
+                    }
+                ]
+            },
+            "image": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://i.imgur.com/nywGxoJ.png",
+                        "size": "large"
+                    }
+                ]
+            },
+            "title": "Wimmelbild"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "templateData": {
+    "type": "object",
+    "objectId": "headlineSample",
+    "properties": {
+        "backgroundImage": {
+            "sources": [
+                {
+                    "url": "https://i.imgur.com/beg4ibu.png",
+                    "size": "large"
+                }
+            ]
+        }
+    }
+}
+    
+}

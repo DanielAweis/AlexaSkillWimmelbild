@@ -1,0 +1,120 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "starte wimmelbild",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hallo",
+            "wie geht\u0027s dir",
+            "sag hallo welt",
+            "sag hallo"
+          ]
+        },
+        {
+          "name": "BienenIntent",
+          "slots": [],
+          "samples": [
+            "fluegel",
+            "schwarze streifen",
+            "gelbes insekt",
+            "gelbes tier",
+            "biene"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "GlobusIntent",
+          "slots": [],
+          "samples": [
+            "geografie",
+            "erde",
+            "blau und gruen",
+            "gruen und blau",
+            "erdkugel",
+            "kugel"
+          ]
+        },
+        {
+          "name": "KonsoleIntent",
+          "slots": [],
+          "samples": [
+            "konsole",
+            "bash",
+            "gruene schrift",
+            "bildschirm",
+            "schwarzer bildschirm",
+            "hello world"
+          ]
+        },
+        {
+          "name": "PersonalityIntent",
+          "slots": [
+            {
+              "name": "mood",
+              "type": "mood"
+            }
+          ],
+          "samples": [
+            "{mood}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "good_mood",
+              "name": {
+                "value": "gut gelaunt",
+                "synonyms": [
+                  "gut"
+                ]
+              }
+            },
+            {
+              "id": "bad_mood",
+              "name": {
+                "value": "schlecht gelaunt",
+                "synonyms": [
+                  "schlecht"
+                ]
+              }
+            }
+          ],
+          "name": "mood"
+        }
+      ]
+    }
+  },
+  "version": "17"
+}

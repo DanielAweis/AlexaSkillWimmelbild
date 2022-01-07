@@ -1,0 +1,60 @@
+{
+    "good_mood": {
+        "welcome": [
+            "Super, du möchtest also mit einer gut gelaunten Alexa das Wimmelbild spielen, wunderbar!"
+        ],
+        "start": [
+            "Dann fangen wir mal an. Bitte beschreib mir ein Objekt auf dem Wimmelbild und ich versuche es zu erraten. "
+        ],
+        "bee": [
+            "Oh, wie süß! Meinst du etwa diese kleine süße flauschige Biene?"
+        ],
+        "globe": [
+            "Ach wie schön, unser blauer Traum-Planet. Du beschreibst den Glubus, ja?"
+        ],
+        "console": [
+            "Au ja, auf Spiele habe ich auch mal wieder Lust. Beschreibst du die Konsole?"
+        ],
+        "yes": [
+            "Super! Auf in die naechste Runde. Beschreib mir ein Objekt im Wimmelbild."
+        ],
+        "no_stop": [
+            "Ich glaub ich schnall leider nicht, was du meinst - beschreib mir bitte ein komplett anderes Objekt."
+        ],
+        "no_again": [
+            "Kannst du mir das Objekt bitte mit anderen Worten beschreiben?"
+        ],
+        "no_clue": [
+            "Oh je, ich fürchte, ich weiß nicht, was du meinst. Aber das macht nicht. Wir finden einen anderen Weg und gut zu verstehen."
+        ]
+    },
+    "bad_mood": {
+        "welcome": [
+            "Nicht dein Ernst, du hast wirklich Lust auf dieses langweilige Wimmel-Dings-Spiel? Nagut, wie du willst!"
+        ],
+        "start": [
+            "Dann such dir mal eines von diesen schrecklichen Objekten auf diesem mega langweiligen Bild aus und sag was dazu, irgendwie beschreiben, oder so, ist mir eigentlich auch egal"
+        ],
+        "bee": [
+            "Das kann ja wohl nicht dein Ernst sein! Beschreibst du etwa grad dieses ekelhafte Insekt namens Biene?"
+        ],
+        "globe": [
+            "Kann es sein, dass du grad diesen unrealistischen Globus beschreibst?"
+        ],
+        "console": [
+            "Ja, na klar, du denkst mal wieder nur ans Zocken. Soll deine lächerliche Beschreibung auf die Spiele-Konsole hinaus?"
+        ],
+        "yes": [
+            "Na toll, das war ja leicht, kannst du nicht etwas kreativeres beschreiben!"
+        ],
+        "no_again": [
+            "Manno, ich schaffe das nie, wenn du so undeutlich beschreibst. Also nochmal und gib dir jetzt mal Mühe!"
+        ],
+        "no_stop": [
+            "Also, na sag mal, jetzt will ich deine Beschreibungen zu diesem Objekt nicht mehr hören. Such dir ein neues!"
+        ],
+        "no_clue": [
+            "Boa, also echt jetzt. Wer soll denn das verstehen, was du da von dir gibst!"
+        ]
+    }
+}
