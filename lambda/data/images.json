@@ -1,0 +1,65 @@
+{
+    "wimmelbild": { 
+        "image": "Media/wimmelbild_full.png"
+    },
+    "globe": {
+        "image": "Media/globus.png"
+    },
+    "bee": {
+        "image": "Media/biene.png"
+    },
+    "console": {
+        "image": "Media/konsole.png"
+    },
+    "boat": {
+        "image": "Media/boot.png"
+    },
+    "book": {
+        "image": "Media/buch.png"
+    },
+    "chemistry": {
+        "image": "Media/chemie.png"
+    },
+    "dolphin": {
+        "image": "Media/delfin.png"
+    },
+    "diy_lab": {
+        "image": "Media/diy_lab.png"
+    },
+    "doctor": {
+        "image": "Media/doktorin.png"
+    },
+    "europe": {
+        "image": "Media/europaflagge.png"
+    },
+    "telescope": {
+        "image": "Media/fernrohr.png"
+    },
+    "fridays": {
+        "image": "Media/fridays_for_future.png"
+    },
+    "hello_world": {
+        "image": "Media/hello_world.png"
+    },
+    "teacher": {
+        "image": "Media/lehrer.png"
+    },
+    "math": {
+        "image": "Media/mathe.png"
+    },
+    "graphs": {
+        "image": "Media/professor_graphen.png"
+    },
+    "rainbow": {
+        "image": "Media/regenbogen.png"
+    },
+    "saturn": {
+        "image": "Media/saturn.png"
+    },
+    "pen": {
+        "image": "Media/stift.png"
+    },
+    "clock": {
+        "image": "Media/uhr.png"
+    }
+}
