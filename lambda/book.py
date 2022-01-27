@@ -9,33 +9,30 @@ from ask_sdk_model.interfaces.alexa.presentation.apl import RenderDocumentDirect
 from utils import load_apl_document, create_presigned_url
 from utterances import choose_utterance, UTTERANCES
 
-class BienenIntentHandler(AbstractRequestHandler):
+class BuchIntentHandler(AbstractRequestHandler):
     """Handler for Help Intent."""
     
-    # DW: object name
-    object_name = "bee"
+    # object name
+    object_name = "book"
     
     # Documents for rendering visual response
     template_apl = load_apl_document("data/template.json")
-    data_apl = load_apl_document("data/bee.json")
+    data_apl = load_apl_document("data/globe.json")
     images = load_apl_document("data/images.json")
     
     data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images[object_name]["image"])
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("BienenIntent")(handler_input)
+        return ask_utils.is_intent_name("BuchIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         
-        # Identify chosen mood.
+        # Identify chosen modus.
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
         
-        ######## DW: TODO for all objects:
-        # copy and paste this and change the object name above
-        # and delete old speak_output statement 
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
         
@@ -61,7 +58,6 @@ class BienenIntentHandler(AbstractRequestHandler):
         attributes = {"mood": mood, "wrong_counter": wrong_counter, "already_mentioned": already_mentioned}
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()
-        ######## end copy and paste
 
         response_builder = handler_input.response_builder
         
@@ -69,7 +65,7 @@ class BienenIntentHandler(AbstractRequestHandler):
                 handler_input).alexa_presentation_apl is not None:
             response_builder.add_directive(
                 RenderDocumentDirective(
-                    token="beeToken",
+                    token="bookToken",
                     document = self.template_apl,
                     datasources = self.data_apl
                 ))

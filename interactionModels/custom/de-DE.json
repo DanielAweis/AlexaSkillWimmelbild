@@ -13,7 +13,13 @@
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": []
+          "samples": [
+            "byebye",
+            "tschau",
+            "spiel zuende",
+            "ich will nicht mehr spielen",
+            "tschuess"
+          ]
         },
         {
           "name": "AMAZON.NavigateHomeIntent",
@@ -65,10 +71,9 @@
           ]
         },
         {
-          "name": "KonsoleIntent",
+          "name": "HelloIntent",
           "slots": [],
           "samples": [
-            "konsole",
             "bash",
             "gruene schrift",
             "bildschirm",
@@ -86,6 +91,88 @@
           ],
           "samples": [
             "{mood}"
+          ]
+        },
+        {
+          "name": "KonsoleIntent",
+          "slots": [],
+          "samples": [
+            "videospiel",
+            "spielen",
+            "grau und rot",
+            "grau",
+            "rote knoepfe",
+            "konsole"
+          ]
+        },
+        {
+          "name": "BuchIntent",
+          "slots": [],
+          "samples": [
+            "roman",
+            "papier",
+            "gruenes buch",
+            "buch"
+          ]
+        },
+        {
+          "name": "StiftIntent",
+          "slots": [],
+          "samples": [
+            "bleistift",
+            "schreiben",
+            "gruener stift",
+            "stift"
+          ]
+        },
+        {
+          "name": "EUIntent",
+          "slots": [],
+          "samples": [
+            "sterne",
+            "eu",
+            "blaue flagge",
+            "europa"
+          ]
+        },
+        {
+          "name": "FernrohrIntent",
+          "slots": [],
+          "samples": [
+            "rot",
+            "rotes fernglas",
+            "linse",
+            "teleskop",
+            "fernglas",
+            "fernrohr"
+          ]
+        },
+        {
+          "name": "DolphinIntent",
+          "slots": [],
+          "samples": [
+            "schwimmt",
+            "graues Tier",
+            "Delfin"
+          ]
+        },
+        {
+          "name": "TeacherIntent",
+          "slots": [],
+          "samples": [
+            "schreibt an die Tafel",
+            "Unterricht",
+            "steht an der Tafel",
+            "Lehrer"
+          ]
+        },
+        {
+          "name": "RainbowIntent",
+          "slots": [],
+          "samples": [
+            "erscheint bei Regen und Sonne",
+            "bunt",
+            "Regenbogen"
           ]
         }
       ],
@@ -116,5 +203,5 @@
       ]
     }
   },
-  "version": "17"
+  "version": "25"
 }
