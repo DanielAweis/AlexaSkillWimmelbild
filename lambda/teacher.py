@@ -9,11 +9,11 @@ from ask_sdk_model.interfaces.alexa.presentation.apl import RenderDocumentDirect
 from utils import load_apl_document, create_presigned_url
 from utterances import choose_utterance, UTTERANCES
 
-class GlobusIntentHandler(AbstractRequestHandler):
-    """Handler for Help Intent."""
+class TeacherIntentHandler(AbstractRequestHandler):
+    """Handler for Teacher Intent."""
     
     # object name
-    object_name = "globe"
+    object_name = "teacher"
     
     # Documents for rendering visual response
     template_apl = load_apl_document("data/template.json")
@@ -24,7 +24,7 @@ class GlobusIntentHandler(AbstractRequestHandler):
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("GlobusIntent")(handler_input)
+        return ask_utils.is_intent_name("TeacherIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -41,9 +41,9 @@ class GlobusIntentHandler(AbstractRequestHandler):
             # update bee into already_mentioned in persistent attributes
             already_mentioned.append(self.object_name)
             
-            speak_output = choose_utterance(mood, self,object_name)
+            speak_output = choose_utterance(mood, self.object_name)
         
-        # if object was already_mentioned 
+        # if bee was already_mentioned 
         else:
             wrong_counter += 1
             # check wrong_counter
@@ -65,7 +65,7 @@ class GlobusIntentHandler(AbstractRequestHandler):
                 handler_input).alexa_presentation_apl is not None:
             response_builder.add_directive(
                 RenderDocumentDirective(
-                    token="globeToken",
+                    token="bookToken",
                     document = self.template_apl,
                     datasources = self.data_apl
                 ))

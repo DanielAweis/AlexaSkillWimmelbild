@@ -7,15 +7,19 @@ from ask_sdk_model.interfaces.alexa.presentation.apl import (
     UserEvent, RenderDocumentDirective)
 
 # Helper functions
-from utils import load_apl_document
+from utils import load_apl_document, create_presigned_url
 from utterances import choose_utterance, UTTERANCES
 
 class PersonalityIntentHandler(AbstractRequestHandler):
     """Handler for Personality Intent."""
     
     # Documents for rendering visual response
-    template_doc = "data/template.json"
-    wimmel_doc = "data/wimmelbild.json"
+    template_apl = load_apl_document("data/template.json")
+    wimmel_apl = load_apl_document("data/wimmelbild.json")
+    images = load_apl_document("data/images.json")
+    
+    wimmel_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images["wimmelbild"]["image"])
+    
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -37,10 +41,11 @@ class PersonalityIntentHandler(AbstractRequestHandler):
             slots = handler_input.request_envelope.request.intent.slots
             mood = slots["mood"].resolutions.resolutions_per_authority[0].values[0].value.id
         
-        # Save mood to persistent memory 
+        # Save mood to persistent memory and initialize wrong_counter with 0
+        # and initialize already_mentioned with a empty list
         attributes_manager = handler_input.attributes_manager
-        actual_mood = {"mood": mood} # seen key 
-        attributes_manager.persistent_attributes.update(actual_mood)
+        attributes = {"mood": mood, "wrong_counter": 0, "already_mentioned":[]}
+        attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()
         
         speak_output = choose_utterance(mood, "start")
@@ -52,8 +57,8 @@ class PersonalityIntentHandler(AbstractRequestHandler):
             response_builder.add_directive(
                 RenderDocumentDirective(
                     token="WimmelbildToken",
-                    document=load_apl_document(self.template_doc),
-                    datasources=load_apl_document(self.wimmel_doc)
+                    document = self.template_apl,
+                    datasources = self.wimmel_apl
                 ))
         
         return response_builder.speak(speak_output).response

@@ -1,9 +1,5 @@
  # -*- coding: utf-8 -*-
 
-# This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK for Python.
-# Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
-# session persistence, api calls, and more.
-# This sample is built using the handler classes approach in skill builder.
 import logging
 import json
 
@@ -22,7 +18,7 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_core.utils import get_supported_interfaces
 from ask_sdk_model.interfaces.alexa.presentation.apl import RenderDocumentDirective, ExecuteCommandsDirective, SpeakItemCommand, AutoPageCommand, HighlightMode, UserEvent
 
-# DW: to store and retrieve persistent data
+# store and retrieve persistent data
 from ask_sdk_s3.adapter import S3Adapter
 s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
 
@@ -31,13 +27,20 @@ s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
 # personality
 from mood_choice import PersonalityIntentHandler
 
-# Dw: handler for the objects
+# handler for the objects
 from bee import BienenIntentHandler
 from globe import GlobusIntentHandler
 from console import KonsoleIntentHandler
+from pen import StiftIntentHandler
+from book import BuchIntentHandler
+from eu import EUIntentHandler
+from telescope import FernrohrIntentHandler
+from dolphin import DolphinIntentHandler
+from teacher import TeacherIntentHandler
+from rainbow import RainbowIntentHandler
 
 # Helper functions
-# DW: utterances handler for choosen personality
+# utterances handler for choosen personality
 from utterances import choose_utterance, UTTERANCES
 from utils import load_apl_document
 
@@ -45,9 +48,6 @@ from ask_sdk_model import Response
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-
-wrong_counter = 0
-# count wrong object proposals
 
 def _load_apl_document(file_path):
     with open(file_path) as f:
@@ -143,21 +143,31 @@ class NoIntentHandler(AbstractRequestHandler):
         # Identify chosen modus.
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
+        wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
+        already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         
-        global wrong_counter
+        # TODO: Wimmelbild wieder zeigen
         wrong_counter += 1
         
         if wrong_counter <= 3:
             speak_output = choose_utterance(mood, "no_again")
         else:
             wrong_counter = 0
+            already_mentioned.clear()
             speak_output = choose_utterance(mood, "no_stop")
+            
+        # update persistent memory with new wrong_counter and already_mentioned
+        attributes = {"mood": mood, "wrong_counter": wrong_counter, "already_mentioned": already_mentioned}
+        attributes_manager.persistent_attributes.update(attributes)
+        attributes_manager.save_persistent_attributes()
+        
         return (
             handler_input.response_builder
                 .speak(speak_output)
                 .ask(speak_output)
                 .response
         )
+
 class YesIntentHandler(AbstractRequestHandler):
     """Handler for Yes Intent."""
     def can_handle(self, handler_input):
@@ -170,10 +180,15 @@ class YesIntentHandler(AbstractRequestHandler):
         # Identify chosen modus.
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
+        already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         
-        global wrong_counter
-        wrong_counter = 0
+        # reset wrong_counter and already_mentioned because new round
+        # update persistent memory with new wrong_counter and already_mentioned
+        attributes = {"mood": mood, "wrong_counter": 0, "already_mentioned": already_mentioned.clear()}
+        attributes_manager.persistent_attributes.update(attributes)
+        attributes_manager.save_persistent_attributes()
         
+        # TODO: Wimmelbild wieder zeigen
         # reset wrong proposal counter because new round
         speak_output = choose_utterance(mood, "yes")
         #auf neuen input warten
@@ -193,8 +208,11 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
                 ask_utils.is_intent_name("AMAZON.StopIntent")(handler_input))
 
     def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-        speak_output = "Goodbye!"
+        # Identify chosen modus.
+        attributes_manager = handler_input.attributes_manager
+        mood = attributes_manager.persistent_attributes["mood"]
+        
+        speak_output = choose_utterance(mood, "bye")
 
         return (
             handler_input.response_builder
@@ -211,6 +229,8 @@ class FallbackIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In FallbackIntentHandler")
+        
+        # TODO: Wann wird das getriggert? Und soll immer getriggert werden, wenn sie keine Ahnung hat.
         
         # Identify chosen modus.
         attributes_manager = handler_input.attributes_manager
@@ -270,7 +290,8 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
 
-        speak_output = exception
+        #speak_output = ""
+        speak_output = "Es gab einen Fehler: {} in {}.".format(exception, __name__)
 
         return (
             handler_input.response_builder
@@ -288,15 +309,22 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 sb = CustomSkillBuilder(persistence_adapter=s3_adapter)
 
 # TODO: Hier CustomSkillBuilder anpassen!
+# imported Intents:
 sb.add_request_handler(PersonalityIntentHandler())
 sb.add_request_handler(BienenIntentHandler())
 sb.add_request_handler(GlobusIntentHandler())
 sb.add_request_handler(KonsoleIntentHandler())
+sb.add_request_handler(StiftIntentHandler())
+sb.add_request_handler(BuchIntentHandler())
+sb.add_request_handler(EUIntentHandler())
+sb.add_request_handler(FernrohrIntentHandler())
+sb.add_request_handler(DolphinIntentHandler())
+sb.add_request_handler(TeacherIntentHandler())
+sb.add_request_handler(RainbowIntentHandler())
+
+# here all intents within this file: 
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(HelloWorldIntentHandler())
-sb.add_request_handler(GlobusIntentHandler())
-sb.add_request_handler(KonsoleIntentHandler())
-sb.add_request_handler(BienenIntentHandler())
 sb.add_request_handler(YesIntentHandler())
 sb.add_request_handler(NoIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
