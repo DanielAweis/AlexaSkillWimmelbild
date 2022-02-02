@@ -27,6 +27,11 @@ s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
 # personality
 from mood_choice import PersonalityIntentHandler
 
+# yes and no and cancel intent handlers
+from yes import YesIntentHandler
+from no import NoIntentHandler
+from bye import CancelOrStopIntentHandler
+
 # handler for the objects
 from bee import BienenIntentHandler
 from globe import GlobusIntentHandler
@@ -56,8 +61,8 @@ def _load_apl_document(file_path):
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
     
-    template_mood_doc = "data/template_mood.json"
-    mood_doc = "data/mood.json"
+    template_mood_doc = "jsondata/template_mood.json"
+    mood_doc = "jsondata/mood.json"
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -100,8 +105,8 @@ class HelloWorldIntentHandler(AbstractRequestHandler):
                     .add_directive(
                         RenderDocumentDirective(
                             token="pagerToken",
-                            document=_load_apl_document("document.json"),
-                            datasources=_load_apl_document("default.json")
+                            document=_load_apl_document("jsondata/document.json"),
+                            datasources=_load_apl_document("jsondata/default.json")
                         )
                     )
                     .response
@@ -130,75 +135,6 @@ class HelpIntentHandler(AbstractRequestHandler):
                 .ask(speak_output)
                 .response
         )
-
-class NoIntentHandler(AbstractRequestHandler):
-    """Handler for No Intent."""
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("AMAZON.NoIntent")(handler_input)
-
-    def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-        
-        # Identify chosen modus.
-        attributes_manager = handler_input.attributes_manager
-        mood = attributes_manager.persistent_attributes["mood"]
-        wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
-        already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
-        
-        # TODO: Wimmelbild wieder zeigen
-        wrong_counter += 1
-        
-        if wrong_counter <= 3:
-            speak_output = choose_utterance(mood, "no_again")
-        else:
-            wrong_counter = 0
-            already_mentioned.clear()
-            speak_output = choose_utterance(mood, "no_stop")
-            
-        # update persistent memory with new wrong_counter and already_mentioned
-        attributes = {"mood": mood, "wrong_counter": wrong_counter, "already_mentioned": already_mentioned}
-        attributes_manager.persistent_attributes.update(attributes)
-        attributes_manager.save_persistent_attributes()
-        
-        return (
-            handler_input.response_builder
-                .speak(speak_output)
-                .ask(speak_output)
-                .response
-        )
-
-class YesIntentHandler(AbstractRequestHandler):
-    """Handler for Yes Intent."""
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("AMAZON.YesIntent")(handler_input)
-
-    def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-        
-        # Identify chosen modus.
-        attributes_manager = handler_input.attributes_manager
-        mood = attributes_manager.persistent_attributes["mood"]
-        already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
-        
-        # reset wrong_counter and already_mentioned because new round
-        # update persistent memory with new wrong_counter and already_mentioned
-        attributes = {"mood": mood, "wrong_counter": 0, "already_mentioned": already_mentioned.clear()}
-        attributes_manager.persistent_attributes.update(attributes)
-        attributes_manager.save_persistent_attributes()
-        
-        # TODO: Wimmelbild wieder zeigen
-        # reset wrong proposal counter because new round
-        speak_output = choose_utterance(mood, "yes")
-        #auf neuen input warten
-        return (
-            handler_input.response_builder
-                .speak(speak_output)
-                .ask(speak_output)
-                .response
-        )
-
 
 class CancelOrStopIntentHandler(AbstractRequestHandler):
     """Single handler for Cancel and Stop Intent."""
@@ -234,7 +170,7 @@ class FallbackIntentHandler(AbstractRequestHandler):
         
         # Identify chosen modus.
         attributes_manager = handler_input.attributes_manager
-        mood = attributes_manager.persistent_attributes["mood"]
+        mood = attributes_nager.persistent_attributes["mood"]
         
         speak_output = choose_utterance(mood, "no_clue")
 
@@ -311,6 +247,10 @@ sb = CustomSkillBuilder(persistence_adapter=s3_adapter)
 # TODO: Hier CustomSkillBuilder anpassen!
 # imported Intents:
 sb.add_request_handler(PersonalityIntentHandler())
+sb.add_request_handler(YesIntentHandler())
+sb.add_request_handler(NoIntentHandler())
+sb.add_request_handler(CancelOrStopIntentHandler())
+# objects:
 sb.add_request_handler(BienenIntentHandler())
 sb.add_request_handler(GlobusIntentHandler())
 sb.add_request_handler(KonsoleIntentHandler())
@@ -325,10 +265,7 @@ sb.add_request_handler(RainbowIntentHandler())
 # here all intents within this file: 
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(HelloWorldIntentHandler())
-sb.add_request_handler(YesIntentHandler())
-sb.add_request_handler(NoIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
-sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(FallbackIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 sb.add_request_handler(IntentReflectorHandler()) # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers

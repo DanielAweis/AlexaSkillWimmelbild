@@ -1,0 +1,13 @@
+JETZT bis Freitag den 4.2. um 10 Uhr :
+- DONE no und yes intent mit bild anzeigen, separate datei je intent (daniela)
+- DONE neue bilder version einfügen (wie in bee) (daniela)
+- DONE neue persistence memory einfügen (wie in bee) (daniela)
+- f-string bei already mentioned (lea)
+- DONE alle json dateien der bild-obj löschen und zu einem zusammenfassen (niklas)
+- good bye screen (daniela)
+- mehr bewegung in <amazon:emotion name='excited' intensity='medium'> (lea)
+- je Objekt 1-2 weitere strings in utterances.json:
+    - good mood: (niklas)
+    - bad mood: (lea)
+SPÄTER:  
+- 10 Objekte implementieren

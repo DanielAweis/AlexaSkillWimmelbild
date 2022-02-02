@@ -1,7 +1,7 @@
 import json
 import random
 
-UTTERANCES = "utterances.json"
+UTTERANCES = "jsondata/utterances.json"
 
 def load_utterances(file_name):
     """Loads a json file and returns dictionary """

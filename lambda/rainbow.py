@@ -16,9 +16,9 @@ class RainbowIntentHandler(AbstractRequestHandler):
     object_name = "rainbow"
     
     # Documents for rendering visual response
-    template_apl = load_apl_document("data/template.json")
-    data_apl = load_apl_document("data/globe.json")
-    images = load_apl_document("data/images.json")
+    template_apl = load_apl_document("jsondata/main_apl_template.json")
+    data_apl = load_apl_document("jsondata/data_apl_template.json")
+    images = load_apl_document("jsondata/images.json")
     
     data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images[object_name]["image"])
     

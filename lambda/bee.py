@@ -10,15 +10,15 @@ from utils import load_apl_document, create_presigned_url
 from utterances import choose_utterance, UTTERANCES
 
 class BienenIntentHandler(AbstractRequestHandler):
-    """Handler for Help Intent."""
+    """Handler for Bienen Intent."""
     
     # DW: object name
     object_name = "bee"
     
     # Documents for rendering visual response
-    template_apl = load_apl_document("data/template.json")
-    data_apl = load_apl_document("data/bee.json")
-    images = load_apl_document("data/images.json")
+    template_apl = load_apl_document("jsondata/main_apl_template.json")
+    data_apl = load_apl_document("jsondata/data_apl_template.json")
+    images = load_apl_document("jsondata/images.json")
     
     data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images[object_name]["image"])
     
@@ -58,7 +58,11 @@ class BienenIntentHandler(AbstractRequestHandler):
                 speak_output = choose_utterance(mood, "no_stop")
                 
         # update persistent memory with new wrong_counter and already_mentioned
-        attributes = {"mood": mood, "wrong_counter": wrong_counter, "already_mentioned": already_mentioned}
+        attributes = {
+            "mood": mood, 
+            "wrong_counter": wrong_counter, 
+            "already_mentioned": already_mentioned
+        }
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()
         ######## end copy and paste
