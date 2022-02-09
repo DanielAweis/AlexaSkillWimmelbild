@@ -43,6 +43,12 @@ from telescope import FernrohrIntentHandler
 from dolphin import DolphinIntentHandler
 from teacher import TeacherIntentHandler
 from rainbow import RainbowIntentHandler
+from clock import UhrIntentHandler
+from chemistry import ChemieIntentHandler
+from helloworld import HelloWorldIntentHandler
+from doctor import DoktorIntentHandler
+from graphs import GraphsIntentHandler
+from boat import BoatIntentHandler
 
 # Helper functions
 # utterances handler for choosen personality
@@ -54,9 +60,12 @@ from ask_sdk_model import Response
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+object_german = ""
+
 def _load_apl_document(file_path):
     with open(file_path) as f:
         return json.load(f)
+
 
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
@@ -87,11 +96,11 @@ class LaunchRequestHandler(AbstractRequestHandler):
         return response_builder.speak(speak_output).response
 
 
-class HelloWorldIntentHandler(AbstractRequestHandler):
-    """Handler for Hello World Intent."""
+"""class HelloWorldIntentHandler(AbstractRequestHandler):
+    #Handler for Hello World Intent.
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("HelloWorldIntent")(handler_input)
+        return ask_utils.is_intent_name("HelloIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -116,7 +125,7 @@ class HelloWorldIntentHandler(AbstractRequestHandler):
                 handler_input.response_builder
                 .speak("Nö.")
                 .response
-            )
+            )"""
 
 
 class HelpIntentHandler(AbstractRequestHandler):
@@ -261,6 +270,12 @@ sb.add_request_handler(FernrohrIntentHandler())
 sb.add_request_handler(DolphinIntentHandler())
 sb.add_request_handler(TeacherIntentHandler())
 sb.add_request_handler(RainbowIntentHandler())
+sb.add_request_handler(UhrIntentHandler())
+sb.add_request_handler(ChemieIntentHandler())
+sb.add_request_handler(HelloWorldIntentHandler())
+sb.add_request_handler(DoktorIntentHandler())
+sb.add_request_handler(GraphsIntentHandler())
+sb.add_request_handler(BoatIntentHandler())
 
 # here all intents within this file: 
 sb.add_request_handler(LaunchRequestHandler())

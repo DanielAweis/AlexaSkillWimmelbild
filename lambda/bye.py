@@ -16,11 +16,11 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
     # Documents for rendering visual response
     template_apl = load_apl_document("jsondata/main_apl_template.json")
     data_apl = load_apl_document("jsondata/data_apl_template.json")
-    images = load_apl_document("jsondata/images.json")
+    images = load_apl_document("images.json")
     
     #TODO: upload bye bye image 
     
-    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images["bye"]["image"]) 
+    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images["bee"]["image"]) 
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool

@@ -14,11 +14,13 @@ class StiftIntentHandler(AbstractRequestHandler):
     
     # DW: object name
     object_name = "pen"
+    global object_german
+    object_german = "der Stift"
     
     # Documents for rendering visual response
     template_apl = load_apl_document("jsondata/main_apl_template.json")
     data_apl = load_apl_document("jsondata/data_apl_template.json")
-    images = load_apl_document("jsondata/images.json")
+    images = load_apl_document("images.json")
     
     data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images[object_name]["image"])
     
@@ -48,7 +50,7 @@ class StiftIntentHandler(AbstractRequestHandler):
             wrong_counter += 1
             # check wrong_counter
             if wrong_counter <= 3:
-                speak_output = choose_utterance(mood, "already_mentioned")
+                speak_output = choose_utterance(mood, "already_mentioned").format(object_german)
             else:
                 wrong_counter = 0
                 already_mentioned.clear()

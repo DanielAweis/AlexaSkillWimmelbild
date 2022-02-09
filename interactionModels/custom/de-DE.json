@@ -5,7 +5,14 @@
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
-          "samples": []
+          "samples": [
+            "ich will nicht mehr",
+            "spielende",
+            "ende das spiel",
+            "goodbye",
+            "ich will nicht mehr spielen",
+            "spiel enden"
+          ]
         },
         {
           "name": "AMAZON.HelpIntent",
@@ -13,14 +20,7 @@
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": [
-            "stopp",
-            "byebye",
-            "tschau",
-            "spiel zuende",
-            "ich will nicht mehr spielen",
-            "tschuess"
-          ]
+          "samples": []
         },
         {
           "name": "AMAZON.NavigateHomeIntent",
@@ -34,10 +34,11 @@
           "name": "HelloWorldIntent",
           "slots": [],
           "samples": [
-            "hallo",
-            "wie geht\u0027s dir",
-            "sag hallo welt",
-            "sag hallo"
+            "html",
+            "computerfenster",
+            "green text",
+            "programmieren",
+            "hello world"
           ]
         },
         {
@@ -63,6 +64,7 @@
           "name": "GlobusIntent",
           "slots": [],
           "samples": [
+            "globus",
             "geografie",
             "erde",
             "blau und gruen",
@@ -152,6 +154,7 @@
           "name": "DolphinIntent",
           "slots": [],
           "samples": [
+            "säugetier",
             "schwimmt",
             "graues Tier",
             "Delfin"
@@ -174,6 +177,62 @@
             "erscheint bei Regen und Sonne",
             "bunt",
             "Regenbogen"
+          ]
+        },
+        {
+          "name": "UhrIntent",
+          "slots": [],
+          "samples": [
+            "ziffernblatt",
+            "gelb und rund",
+            "rund und gelb",
+            "uhrzeit",
+            "zeiger"
+          ]
+        },
+        {
+          "name": "ChemieIntent",
+          "slots": [],
+          "samples": [
+            "erlenmeyerkolben",
+            "elemente",
+            "periodensystem",
+            "dubnium",
+            "einhundertfünf",
+            "hundertfünf",
+            "achtzehn",
+            "argon",
+            "chemie"
+          ]
+        },
+        {
+          "name": "DoktorIntent",
+          "slots": [],
+          "samples": [
+            "behandelt kranke Menschen",
+            "weißer Kittel",
+            "blonde Haare",
+            "Doktorin",
+            "Ärztin"
+          ]
+        },
+        {
+          "name": "GraphsIntent",
+          "slots": [],
+          "samples": [
+            "bunte Berge ",
+            "Daten visualisieren",
+            "bunte Graphen"
+          ]
+        },
+        {
+          "name": "BoatIntent",
+          "slots": [],
+          "samples": [
+            "Schiff",
+            "schwimmt auf dem Wasser",
+            "kleines Boot",
+            "Boot"
           ]
         }
       ],
@@ -204,5 +263,5 @@
       ]
     }
   },
-  "version": "26"
+  "version": "37"
 }

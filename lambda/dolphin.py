@@ -14,11 +14,13 @@ class DolphinIntentHandler(AbstractRequestHandler):
     
     # object name
     object_name = "dolphin"
+    global object_german
+    object_german = "den Delfin"
     
     # Documents for rendering visual response
     template_apl = load_apl_document("jsondata/main_apl_template.json")
     data_apl = load_apl_document("jsondata/data_apl_template.json")
-    images = load_apl_document("jsondata/images.json")
+    images = load_apl_document("images.json")
     
     data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images[object_name]["image"])
     
