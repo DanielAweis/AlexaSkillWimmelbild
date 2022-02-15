@@ -49,6 +49,9 @@ from helloworld import HelloWorldIntentHandler
 from doctor import DoktorIntentHandler
 from graphs import GraphsIntentHandler
 from boat import BoatIntentHandler
+from saturn import SaturnIntentHandler
+from fff import FridaysIntentHandler
+from mathe import MatheIntentHandler
 
 # Helper functions
 # utterances handler for choosen personality
@@ -136,7 +139,7 @@ class HelpIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Du bist hier im Wimmelbild-Spiel und kannst mir ein Objekt auf dem Bild beschreiben."
+        speak_output = "Du bist hier im Wimmelbild-Spiel und kannst mir ein Objekt auf dem Bild beschreiben. Sag mir dazu einen kurzen Satz ode ein Wort, das dir zum Objekt deiner Wahl einfällt."
 
         return (
             handler_input.response_builder
@@ -145,8 +148,8 @@ class HelpIntentHandler(AbstractRequestHandler):
                 .response
         )
 
-class CancelOrStopIntentHandler(AbstractRequestHandler):
-    """Single handler for Cancel and Stop Intent."""
+"""class CancelOrStopIntentHandler(AbstractRequestHandler):
+    #Single handler for Cancel and Stop Intent.
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return (ask_utils.is_intent_name("AMAZON.CancelIntent")(handler_input) or
@@ -163,7 +166,7 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
             handler_input.response_builder
                 .speak(speak_output)
                 .response
-        )
+        )"""
 
 class FallbackIntentHandler(AbstractRequestHandler):
     """Single handler for Fallback Intent."""
@@ -179,11 +182,11 @@ class FallbackIntentHandler(AbstractRequestHandler):
         
         # Identify chosen modus.
         attributes_manager = handler_input.attributes_manager
-        mood = attributes_nager.persistent_attributes["mood"]
+        mood = attributes_manager.persistent_attributes["mood"]
         
         speak_output = choose_utterance(mood, "no_clue")
 
-        return handler_input.response_builder.speak(speech).ask(speech).response
+        return handler_input.response_builder.speak(speak_output).ask(speak_output).response
 
 class SessionEndedRequestHandler(AbstractRequestHandler):
     """Handler for Session End."""
@@ -276,6 +279,9 @@ sb.add_request_handler(HelloWorldIntentHandler())
 sb.add_request_handler(DoktorIntentHandler())
 sb.add_request_handler(GraphsIntentHandler())
 sb.add_request_handler(BoatIntentHandler())
+sb.add_request_handler(SaturnIntentHandler())
+sb.add_request_handler(FridaysIntentHandler())
+sb.add_request_handler(MatheIntentHandler())
 
 # here all intents within this file: 
 sb.add_request_handler(LaunchRequestHandler())

@@ -9,13 +9,13 @@ from ask_sdk_model.interfaces.alexa.presentation.apl import RenderDocumentDirect
 from utils import load_apl_document, create_presigned_url
 from utterances import choose_utterance, UTTERANCES
 
-class DolphinIntentHandler(AbstractRequestHandler):
-    """Handler for Dolphin Intent."""
+class SaturnIntentHandler(AbstractRequestHandler):
+    """Handler for Saturn Intent."""
     
-    # object name
-    object_name = "dolphin"
+    # DW: object name
+    object_name = "saturn"
     global object_german
-    object_german = "den Delfin"
+    object_german = "den Saturn"
     
     # Documents for rendering visual response
     template_apl = load_apl_document("jsondata/main_apl_template.json")
@@ -26,15 +26,18 @@ class DolphinIntentHandler(AbstractRequestHandler):
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("DolphinIntent")(handler_input)
+        return ask_utils.is_intent_name("SaturnIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         
-        # Identify chosen modus.
+        # Identify chosen mood.
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
         
+        ######## DW: TODO for all objects:
+        # copy and paste this and change the object name above
+        # and delete old speak_output statement 
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
         
@@ -57,9 +60,14 @@ class DolphinIntentHandler(AbstractRequestHandler):
                 speak_output = choose_utterance(mood, "no_stop")
                 
         # update persistent memory with new wrong_counter and already_mentioned
-        attributes = {"mood": mood, "wrong_counter": wrong_counter, "already_mentioned": already_mentioned}
+        attributes = {
+            "mood": mood, 
+            "wrong_counter": wrong_counter, 
+            "already_mentioned": already_mentioned
+        }
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()
+        ######## end copy and paste
 
         response_builder = handler_input.response_builder
         
@@ -67,7 +75,7 @@ class DolphinIntentHandler(AbstractRequestHandler):
                 handler_input).alexa_presentation_apl is not None:
             response_builder.add_directive(
                 RenderDocumentDirective(
-                    token="dolphinToken",
+                    token="saturnToken",
                     document = self.template_apl,
                     datasources = self.data_apl
                 ))

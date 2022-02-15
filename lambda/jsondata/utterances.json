@@ -5,8 +5,8 @@
             "<amazon:emotion name='excited' intensity='high'> Cool, dann lass uns gleich mit dem Wimmelbild loslegen! Stimmung! </amazon:emotion>"
         ],
         "start": [
-            "<amazon:emotion name='excited' intensity='medium'>Dann fangen wir mal an. Bitte beschreib mir ein Objekt auf dem Wimmelbild und ich versuche es zu erraten. </amazon:emotion>",
-            "<amazon:emotion name='excited' intensity='medium'>Hier ist das große Wimmelbild. Such dir einfach ein Objekt aus und beschreibe es so gut du kannst. </amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='medium'>Dann fangen wir mal an. Bitte beschreib mir ein Objekt auf dem Wimmelbild anhand von Wörtern, die dir dazu einfallen, und ich versuche es zu erraten. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'>Hier ist das große Wimmelbild. Such dir einfach ein Objekt aus und beschreibe es so gut du kannst mithilfe von Wörtern, die dir zu dem Objekt einfallen. </amazon:emotion>"
         ],
         "bee": [
             "<amazon:emotion name='excited' intensity='medium'>Oh, wie süß! Meinst du etwa diese kleine süße flauschige Biene?</amazon:emotion>",
@@ -42,21 +42,29 @@
         ],
         "no_stop": [
             "<amazon:emotion name='excited' intensity='low'> Ich glaub ich schnall leider nicht, was du meinst - beschreib mir bitte ein komplett anderes Objekt. </amazon:emotion>",
-            "<amazon:emotion name='excited' intensity='low'> Hmm, ich steh grad auf dem Schlauch... such dir doch bitte ein anderes Objekt aus. </amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='low'> Hmm, ich steh grad auf dem Schlauch... such dir doch bitte ein anderes Objekt aus. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Kannst du bitte ein neues Objekt beschreiben? ich schaffe das leider nicht. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Oh, ich verstehe das leider nicht... such dir bitte ein neues Objekt aus. </amazon:emotion>"
         ],
         "no_again": [
             "<amazon:emotion name='excited' intensity='medium'> Kannst du mir das Objekt bitte mit anderen Worten beschreiben? </amazon:emotion>",
             "<amazon:emotion name='excited' intensity='medium'> Fällt dir vielleicht eine andere Beschreibung ein? </amazon:emotion>"
         ],
         "no_clue": [
-            "<amazon:emotion name='excited' intensity='low'> Oh je, ich fürchte, ich weiß nicht, was du meinst. Aber das macht nicht. Wir finden einen anderen Weg und gut zu verstehen.</amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='low'> Oh je, ich fürchte, ich weiß nicht, was du meinst. Aber das macht nicht. Wir finden einen anderen Weg, uns gut zu verstehen. Mach es mal kurz und knackig!</amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Mhh, ich weiß nicht so genau, was du meinst. Keine Sorge, wir schaffen das schon noch. Kurze knappe Erklärungen mag ich am liebsten! </amazon:emotion>"
         ],
         "already_mentioned": [
-            "<amazon:emotion name='excited' intensity='low'> Das Objekt habe ich schon genannt und es war falsch. Bitte erklär es nochmal mit anderen Worten!</amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='low'> {} habe ich schon genannt und es war falsch. Bitte erklär es nochmal mit anderen Worten!</amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Ich habe {} leider schon genannt! Erklär es nochmal mit einem anderen Wort, das zu dem Objekt passt, das du beschreibst. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Oh, {} habe ich ja schon gesagt und das war ja falsch. Kannst du es mir bitte nochmal mit anderen Worten erklären? </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Mh, mir fällt wieder nur {} ein. Da meintest du ja, dass es das nicht war. Erklär bitte nochmal anders! </amazon:emotion>"
             ],
         "bye": [
-            "<amazon:emotion name='excited' intensity='low'> Wie schade, dass du schon gehen willst! Bis zum nächsten Mal.</amazon:emotion>",
-            "<amazon:emotion name='excited' intensity='low'> Vielen Dank fürs Spielen, hat mir echt Spass gemacht. Bis bald!! </amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='low'> Wie schade, dass du schon gehen willst! Bis zum nächsten Mal und hab noch einen wunderbaren Tag.</amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Vielen Dank fürs Spielen, hat mir echt Spass gemacht. Bis bald!! </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Oh wie schade, dass du nicht mehr spielen willst! Bis zum nächsten Mal.</amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Oh, es hat grad so viel Spaß gemacht. Hoffe, wir spielen bald wieder. Ich wünsche dir noch einen schönen Tag!! </amazon:emotion>"
         ],
         "dolphin": [
             "<amazon:emotion name='excited' intensity='medium'> Oh wunderbar, du beschreibst den Delfin, ja?</amazon:emotion>",
@@ -93,6 +101,18 @@
         "boat": [
             "<amazon:emotion name='excited' intensity='medium'> Ach, wie herrlich, so ein Bootsausflug. Meinst du das Boot unten rechts? </amazon:emotion>",
             "<amazon:emotion name='excited' intensity='medium'> Ah, ich weiß es, du beschreibst das Boot unten rechts? </amazon:emotion>"
+        ],
+        "saturn": [
+            "<amazon:emotion name='excited' intensity='medium'> Unser Sonnensystem ist so cool! Meinst du den Saturn? </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Beschreibst du den Saturn? Ich liebe diesen tollen Ring. </amazon:emotion>"
+        ],
+        "math": [
+            "<amazon:emotion name='excited' intensity='medium'> Mathe ist die Grundlage aller Dinge! Meinst du die Mathetafel? </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Beschreibst du etwa die Mathetafel? Koordinatensysteme sind der Hammer!. </amazon:emotion>"
+        ],
+        "fridays": [
+            "<amazon:emotion name='excited' intensity='medium'> Wir müssen unser Klima schützen! Meinst du Fridays for Future? </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Ah, ich weiß, Fridays for Future? Wir müssen unsere Erde retten!. </amazon:emotion>"
         ]
     },
     "bad_mood": {
@@ -101,7 +121,8 @@
             "<amazon:emotion name='disappointed' intensity='high'> Och man, ich wollte eigentlich gerade nix tun... Naja, dann spiel ich halt dieses blöde Wimmelbild-Spiel mit dir. </amazon:emotion>"
         ],
         "start": [
-            "<amazon:emotion name='disappointed' intensity='high'> Dann such dir mal eines von diesen schrecklichen Objekten auf diesem mega langweiligen Bild aus und sag was dazu, irgendwie beschreiben, oder so, ist mir eigentlich auch egal </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='high'> Dann such dir mal eines von diesen schrecklichen Objekten auf diesem mega langweiligen Bild aus und sag was dazu, irgendwie beschreiben mit relevanten Wörtern, oder so, ist mir eigentlich auch egal </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='high'> Och mann.. Na dann beschreib mal irgendwas hier mit einem Wort, das dir in deinem Erbsenhirn einfällt. </amazon:emotion>"
         ],
         "bee": [
             "<amazon:emotion name='disappointed' intensity='medium'> Das kann ja wohl nicht dein Ernst sein! Beschreibst du etwa grad dieses ekelhafte Insekt namens Biene? </amazon:emotion>",
@@ -112,18 +133,20 @@
             "<amazon:emotion name='disappointed' intensity='medium'> Was für eine... interessante... Wahl. Meinst du den Globus? </amazon:emotion>"
         ],
         "console": [
-            "<amazon:emotion name='disappointed' intensity='high'> Ja, na klar, du denkst mal wieder nur ans Zocken. Soll deine lächerliche Beschreibung auf die Spiele-Konsole hinaus? </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='high'> Ja, na klar, du denkst mal wieder nur ans Zocken. Soll deine lächerliche Beschreibung auf die Spiele-Konsole hinaus? </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='high'> Videospiele sind doch nur Zeitverschwendung.. Meinst du echt die Konsole? </amazon:emotion>"
         ],
         "pen": [
             "<amazon:emotion name='disappointed' intensity='medium'> Oh man, beschreibst du den komischen, unrealistisch riesigen Stift? </amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='medium'> Hmm, sind Bleistifte nicht was für Babys? Beschreibst du ernsthaft den Stift? </amazon:emotion>"
         ],
         "book": [
-            "<amazon:emotion name='disappointed' intensity='medium'> Pah, hast du dir dieses kotzgrüne riesige Buch rausgesucht? </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='high'> Pah, hast du dir dieses kotzgrüne riesige Buch rausgesucht? </amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='medium'> Bist du dir sicher, dass du das Buch beschreibst? Lesen ist doch für Loser. </amazon:emotion>" 
         ],
         "europe": [
-            "<amazon:emotion name='disappointed' intensity='medium'> Echt? Du beschreibst diese kindische EU-Flagge? </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='medium'> Echt? Du beschreibst diese kindische EU-Flagge? </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Beschreibst du die EU-Flagge? Ich finde Flaggen ja total unnötig. </amazon:emotion>"
         ],
         "telescope": [
             "<amazon:emotion name='disappointed' intensity='medium'> Pah, hast du dir dieses kotzgrüne riesige Buch rausgesucht? </amazon:emotion>",
@@ -131,7 +154,7 @@
         ],
         "yes": [
             "<amazon:emotion name='disappointed' intensity='medium'> Na toll, das war ja leicht, kannst du nicht etwas kreativeres beschreiben! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='medium'> Das war ja nicht besonders kreativ... Versuch mal, was besseres zu beschreiben. </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='high'> Das war ja nicht besonders kreativ... Versuch mal, was besseres zu beschreiben. </amazon:emotion>"
         ],
         "no_again": [
             "<amazon:emotion name='disappointed' intensity='medium'> Manno, ich schaffe das nie, wenn du so undeutlich beschreibst. Also nochmal und gib dir jetzt mal Mühe! </amazon:emotion>",
@@ -139,23 +162,29 @@
         ],
         "no_stop": [
             "<amazon:emotion name='disappointed' intensity='medium'> Also, na sag mal, jetzt will ich deine Beschreibungen zu diesem Objekt nicht mehr hören. Such dir ein neues! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='medium'> Ich hab echt keine Geduld mehr. Beschreib einfach ein neues Objekt. </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='medium'> Ich hab echt keine Geduld mehr. Beschreib einfach ein neues Objekt. </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Oha nee, jetzt will ich deine Beschreibungen zu diesem Objekt echt nicht mehr hören. Such dir was anderes! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Och nö, ich will nicht mehr. Beschreib mal ein neues Objekt. </amazon:emotion>"
         ],
         "no_clue": [
-            "<amazon:emotion name='disappointed' intensity='medium'> Boa, also echt jetzt. Wer soll denn das verstehen, was du da von dir gibst! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='medium'> Wäh, was meinst du? Drück dich mal klarer aus. </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='medium'> Boa, also echt jetzt. Wer soll denn das verstehen, was du da von dir gibst! Schwafel mal nicht so, sonder gib was präzises aus! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Wäh, was meinst du? Drück dich mal klarer aus. Kurz und knackig bitte! </amazon:emotion>"
         ],
         "already_mentioned": [
             "<amazon:emotion name='disappointed' intensity='high'> Och manno, {} habe ich schon genannt und es war ja falsch. Erklär es nochmal mit anderen Worten!</amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='high'> {} habe ich dir doch schon gennant! Erklär es mit anderen Worten. </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='high'> {} habe ich dir doch schon gennant! Erklär es mit anderen Worten. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Ach Mensch, {} habe ich ja doch schon gesagt und das war ja schon falsch. Erklär noch mal! </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Mh, mir fällt doch wieder nur {} ein. Gibt dir jetzt doch mal ein bisschen mehr Mühe mit der Erklärung </amazon:emotion>"
         ],
         "bye": [
             "<amazon:emotion name='disappointed' intensity='low'> Na endlich ist dir langweilig. Jetzt kann ich meine Ruhe haben! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='low'> Oh man, ich dachte schon, ich muss ewig mit dir spielen. Endlich Ruhe! </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='low'> Oh man, ich dachte schon, ich muss ewig mit dir spielen. Endlich Ruhe! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='low'> Boa, ich dachte schon dir wird nie langweilig. Endlich hab ich meine Ruhe!</amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='low'> Puh, na endlich hast du keine Lust mehr! Tschüß! </amazon:emotion>"
         ],
         "dolphin": [
             "<amazon:emotion name='disappointed' intensity='medium'> Ja ja, ok, ich hab es verstanden, du beschreibst den Delfin, ja?</amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='medium'> Den Delfin? Das sind echt eklige Tiere... Meinst du den wirklich?</amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='high'> Den Delfin? Das sind echt eklige Tiere... Meinst du den wirklich?</amazon:emotion>"
         ],
         "teacher": [
             "<amazon:emotion name='disappointed' intensity='medium'> Oh ne, erinnere mich nicht an die olle Schulzeit. Du meinst den Lehrer, oder?</amazon:emotion>",
@@ -178,7 +207,7 @@
             "<amazon:emotion name='disappointed' intensity='medium'> Beep. Boop. Informatik. Langweilig. Hallo Welt. Neues Objekt. </amazon:emotion>"
         ],
         "doctor":   [
-            "<amazon:emotion name='disappointed' intensity='medium'> Oha, neee, Ärzte kann ich gar nicht leiden. Diese Besserwisser. Beschreibst du die Doktorin? </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='high'> Oha, neee, Ärzte kann ich gar nicht leiden. Diese Besserwisser. Beschreibst du die Doktorin? </amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='medium'> Meinst du etwa diese großkotzige Ärztin? </amazon:emotion>"
         ],
         "graphs":   [
@@ -188,6 +217,18 @@
         "boat":   [
             "<amazon:emotion name='disappointed' intensity='medium'> Meinst du dieses winzige Boot unten rechts? </amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='medium'> Och nö, das kann ja wohl nicht war sein. So beschreibst du das mickrige Boot? </amazon:emotion>"
+        ],
+        "saturn":   [
+            "<amazon:emotion name='disappointed' intensity='medium'> Planeten sind doch nur olle Steine und Gas... Meinst du wirklich den Saturn? </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Was, du meinst echt den Saturn? Der Planet mit dem ulkigen Ring? </amazon:emotion>"
+        ],
+        "math":   [
+            "<amazon:emotion name='disappointed' intensity='medium'> Oh man, Mathematik ist sooo unnötig, meinst du wirklich die Mathetafel? </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Meh... Die Mathetafel? Beschreibst du die etwa? Du Nerd. </amazon:emotion>"
+        ],
+        "fridays": [
+            "<amazon:emotion name='excited' intensity='medium'> Meinst du etwa Fridays for Future? Also ich finde ja, dass Kinder blöd sind... </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Das Klima ist mir ehrlich gesagt ziemlich egal, solange ich meine Ruhe haben kann. Ist es Fridays for Future? </amazon:emotion>"
         ]
     }
 }

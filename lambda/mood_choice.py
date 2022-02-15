@@ -18,7 +18,7 @@ class PersonalityIntentHandler(AbstractRequestHandler):
     data_apl = load_apl_document("jsondata/data_apl_template.json")
     images = load_apl_document("images.json")
     
-    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images["wimmelbild"]["image"])
+    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = images["wimmelbild"]["image"]
     
     
     def can_handle(self, handler_input):

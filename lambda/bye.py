@@ -20,7 +20,7 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
     
     #TODO: upload bye bye image 
     
-    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images["bee"]["image"]) 
+    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = images["bye"]["image"]
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool

@@ -22,7 +22,7 @@ class BienenIntentHandler(AbstractRequestHandler):
     data_apl = load_apl_document("jsondata/data_apl_template.json")
     images = load_apl_document("images.json")
     
-    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = create_presigned_url(images[object_name]["image"])
+    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = images[object_name]["image"]
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool

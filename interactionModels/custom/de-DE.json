@@ -45,6 +45,9 @@
           "name": "BienenIntent",
           "slots": [],
           "samples": [
+            "stachel",
+            "honig",
+            "insekt",
             "fluegel",
             "schwarze streifen",
             "gelbes insekt",
@@ -64,6 +67,8 @@
           "name": "GlobusIntent",
           "slots": [],
           "samples": [
+            "heimatplanet",
+            "planet erde",
             "globus",
             "geografie",
             "erde",
@@ -77,6 +82,7 @@
           "name": "HelloIntent",
           "slots": [],
           "samples": [
+            "programmieren",
             "bash",
             "gruene schrift",
             "bildschirm",
@@ -100,6 +106,8 @@
           "name": "KonsoleIntent",
           "slots": [],
           "samples": [
+            "zocken",
+            "switch",
             "videospiel",
             "spielen",
             "grau und rot",
@@ -112,6 +120,8 @@
           "name": "BuchIntent",
           "slots": [],
           "samples": [
+            "literatur",
+            "lesen",
             "roman",
             "papier",
             "gruenes buch",
@@ -122,6 +132,7 @@
           "name": "StiftIntent",
           "slots": [],
           "samples": [
+            "radierer",
             "bleistift",
             "schreiben",
             "gruener stift",
@@ -132,6 +143,8 @@
           "name": "EUIntent",
           "slots": [],
           "samples": [
+            "Union",
+            "europäische union",
             "sterne",
             "eu",
             "blaue flagge",
@@ -154,6 +167,8 @@
           "name": "DolphinIntent",
           "slots": [],
           "samples": [
+            "flossen",
+            "blaues tier",
             "säugetier",
             "schwimmt",
             "graues Tier",
@@ -164,6 +179,7 @@
           "name": "TeacherIntent",
           "slots": [],
           "samples": [
+            "schule",
             "schreibt an die Tafel",
             "Unterricht",
             "steht an der Tafel",
@@ -220,6 +236,9 @@
           "name": "GraphsIntent",
           "slots": [],
           "samples": [
+            "daten",
+            "research",
+            "statistik",
             "bunte Berge ",
             "Daten visualisieren",
             "bunte Graphen"
@@ -229,10 +248,42 @@
           "name": "BoatIntent",
           "slots": [],
           "samples": [
+            "gruenes boot",
             "Schiff",
             "schwimmt auf dem Wasser",
             "kleines Boot",
             "Boot"
+          ]
+        },
+        {
+          "name": "SaturnIntent",
+          "slots": [],
+          "samples": [
+            "planet mit ring",
+            "weltall",
+            "planet",
+            "ring",
+            "saturn"
+          ]
+        },
+        {
+          "name": "MatheIntent",
+          "slots": [],
+          "samples": [
+            "sigma",
+            "koordinatensystem ",
+            "x ist gleich y",
+            "mathe"
+          ]
+        },
+        {
+          "name": "FridaysIntent",
+          "slots": [],
+          "samples": [
+            "protest",
+            "schüler",
+            "klima",
+            "fridays for future"
           ]
         }
       ],
@@ -263,5 +314,5 @@
       ]
     }
   },
-  "version": "37"
+  "version": "42"
 }

@@ -14,17 +14,23 @@ Jetzt bis 10.02.: ROBOLab am Donnerstag 10-12 Uhr
 
   DONE Ändere die Zeile load_apl_document("jsondata/images.json") zu images = load_apl_document("images.json")
 
-- ??? good bye screen (daniela) LIegst am Bild
 - 10 Objekte implementieren:
-    - Daniela: Berge (graph), Boot, wissenschaftlerin
-    - Lea: Fridays for Future, Saturn, matheformel (oben rechts)
+    - DONE Daniela: Berge (graph), Boot, wissenschaftlerin
+    - Lea: Fridays for Future, DONE: Saturn, matheformel (oben rechts)
     - DONE Niklas: gelbe Uhr, Argon (chemie zeugs), hello world
 
 - je Objekt 1-2 weitere strings in utterances.json:
     - DONE good mood: (niklas)
-    
+to do bis Sonntag
+- DONE von S3 auf links umstellen 
+- mehr utterances in den intents beim build
+- mehr strings in utterances.json
 
 FRAGEN an Maike: 
 - Wie abfangen, dass was genannt wird, womit sie nicht rechnet?
 - Alles abfangen, ausser die Objekte, die in den Intens definiert sind, usw?
-- Bye-Bild wird nicht gezeigt (CancelOrStopIntentHandler)?
+- DONE Bye-Bild wird nicht gezeigt (CancelOrStopIntentHandler)?
+
+TODO: 
+- Dani: already_mentions und no_clue, no_again, bye mehr Sätze
+- Dani: Hilfe Intent im mood intent benennen 

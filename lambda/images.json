@@ -1,68 +1,68 @@
 {
     "wimmelbild": { 
-        "image": "Media/wimmelbild_full.png"
+        "image": "https://i.imgur.com/EpBX3Gh.png"
     },
     "globe": {
-        "image": "Media/globus.png"
+        "image": "https://i.imgur.com/cu7BF7N.png"
     },
     "bee": {
-        "image": "Media/biene.png"
+        "image": "https://i.imgur.com/nZJr45M.png"
     },
     "console": {
-        "image": "Media/konsole.png"
+        "image": "https://i.imgur.com/jyj0g0H.png"
     },
     "boat": {
-        "image": "Media/boot.png"
+        "image": "https://i.imgur.com/nbjS1VJ.png"
     },
     "book": {
-        "image": "Media/buch.png"
+        "image": "https://i.imgur.com/OwJ5QEr.png"
     },
     "chemistry": {
-        "image": "Media/chemie.png"
+        "image": "https://i.imgur.com/gDBDyHR.png"
     },
     "dolphin": {
-        "image": "Media/delfin.png"
+        "image": "https://i.imgur.com/fyxLZyH.png"
     },
     "diy_lab": {
-        "image": "Media/diy_lab.png"
+        "image": "https://i.imgur.com/3aV0hhC.png"
     },
     "doctor": {
-        "image": "Media/doktorin.png"
+        "image": "https://i.imgur.com/pxHnf5o.png"
     },
     "europe": {
-        "image": "Media/europaflagge.png"
+        "image": "https://i.imgur.com/MIvBsu2.png"
     },
     "telescope": {
-        "image": "Media/fernrohr.png"
+        "image": "https://i.imgur.com/rLNUaIQ.png"
     },
     "fridays": {
-        "image": "Media/fridays_for_future.png"
+        "image": "https://i.imgur.com/qdZyHgo.png"
     },
     "hello_world": {
-        "image": "Media/hello_world.png"
+        "image": "https://i.imgur.com/ZdQls5O.png"
     },
     "teacher": {
-        "image": "Media/lehrer.png"
+        "image": "https://i.imgur.com/hpDtiFW.png"
     },
     "math": {
-        "image": "Media/mathe.png"
+        "image": "https://i.imgur.com/4MxgdW1.png"
     },
     "graphs": {
-        "image": "Media/professor_graphen.png"
+        "image": "https://i.imgur.com/9GuXeo8.png"
     },
     "rainbow": {
-        "image": "Media/regenbogen.png"
+        "image": "https://i.imgur.com/FuL1q1Y.png"
     },
     "saturn": {
-        "image": "Media/saturn.png"
+        "image": "https://i.imgur.com/xe1tJAl.png"
     },
     "pen": {
-        "image": "Media/stift.png"
+        "image": "https://i.imgur.com/CGdtPDn.png"
     },
     "clock": {
-        "image": "Media/uhr.png"
+        "image": "https://i.imgur.com/Jcu4pWy.png"
     },
     "bye": {
-        "image": "Media/bye.png"
+        "image": "https://i.imgur.com/tZTfTI3.jpg"
     }
 }
