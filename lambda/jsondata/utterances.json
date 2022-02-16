@@ -173,8 +173,8 @@
         "already_mentioned": [
             "<amazon:emotion name='disappointed' intensity='high'> Och manno, {} habe ich schon genannt und es war ja falsch. Erklär es nochmal mit anderen Worten!</amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='high'> {} habe ich dir doch schon gennant! Erklär es mit anderen Worten. </amazon:emotion>",
-            "<amazon:emotion name='excited' intensity='low'> Ach Mensch, {} habe ich ja doch schon gesagt und das war ja schon falsch. Erklär noch mal! </amazon:emotion>",
-            "<amazon:emotion name='excited' intensity='low'> Mh, mir fällt doch wieder nur {} ein. Gibt dir jetzt doch mal ein bisschen mehr Mühe mit der Erklärung </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='low'> Ach Mensch, {} habe ich ja doch schon gesagt und das war ja schon falsch. Erklär noch mal! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='low'> Mh, mir fällt doch wieder nur {} ein. Gibt dir jetzt doch mal ein bisschen mehr Mühe mit der Erklärung </amazon:emotion>"
         ],
         "bye": [
             "<amazon:emotion name='disappointed' intensity='low'> Na endlich ist dir langweilig. Jetzt kann ich meine Ruhe haben! </amazon:emotion>",
