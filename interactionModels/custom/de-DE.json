@@ -34,6 +34,10 @@
           "name": "HelloWorldIntent",
           "slots": [],
           "samples": [
+            "schwarzer bildschirm",
+            "bildschirm",
+            "gruene schrift",
+            "bash",
             "html",
             "computerfenster",
             "green text",
@@ -76,18 +80,6 @@
             "gruen und blau",
             "erdkugel",
             "kugel"
-          ]
-        },
-        {
-          "name": "HelloIntent",
-          "slots": [],
-          "samples": [
-            "programmieren",
-            "bash",
-            "gruene schrift",
-            "bildschirm",
-            "schwarzer bildschirm",
-            "hello world"
           ]
         },
         {
@@ -285,6 +277,18 @@
             "klima",
             "fridays for future"
           ]
+        },
+        {
+          "name": "AlexasTurn",
+          "slots": [
+            {
+              "name": "alexas_turn",
+              "type": "alexas_turn"
+            }
+          ],
+          "samples": [
+            "Meinst du {alexas_turn} "
+          ]
         }
       ],
       "types": [
@@ -310,9 +314,32 @@
             }
           ],
           "name": "mood"
+        },
+        {
+          "values": [
+            {
+              "id": "alexa_bee",
+              "name": {
+                "value": "biene"
+              }
+            },
+            {
+              "id": "alexa_boot",
+              "name": {
+                "value": "boot"
+              }
+            },
+            {
+              "id": "alexa_saturn",
+              "name": {
+                "value": "saturn"
+              }
+            }
+          ],
+          "name": "alexas_turn"
         }
       ]
     }
   },
-  "version": "42"
+  "version": "46"
 }

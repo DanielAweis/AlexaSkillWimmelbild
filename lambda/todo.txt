@@ -1,36 +1,18 @@
-JETZT bis Freitag den 4.2. um 10 Uhr :
-- DONE no und yes intent mit bild anzeigen, separate datei je intent (daniela)
-- DONE neue bilder version einfügen (wie in bee) (daniela)
-- DONE neue persistence memory einfügen (wie in bee) (daniela)
-- DONE f-string bei already mentioned (lea)
-- DONE alle json dateien der bild-obj löschen und zu einem zusammenfassen (niklas)
-- DONE mehr bewegung in <amazon:emotion name='excited' intensity='medium'> (lea)
+To do:
 
-- je Objekt 1-2 weitere strings in utterances.json:
-    - DONE bad mood: (lea)
+Aufgabenteilung: 
+    Niklas:
+        - DONE: Endbildschirm mit Statistik
+        - Touch-Objekte Photoshop
+        - Optimierung TW- Bei TWs immer Objekte benennen (Sandbox)
+    Dani: Statistik, Speichern genannter Objekte (Boot, Biene Saturn)
+        - Turntaking nach 3 mal Falsch geraten
+        - aufschreiben 
+    Lea: Struktur, Intents
+        - zeitmessungen für statistiken
+        - Bericht einrichten
+        
+Nebenher NOTIZEN für Bericht machen
+Beim sprachlichen Reagieren auf AlexasTurn eine gute Vorgabe für den User machen!
 
 
-Jetzt bis 10.02.: ROBOLab am Donnerstag 10-12 Uhr 
-
-  DONE Ändere die Zeile load_apl_document("jsondata/images.json") zu images = load_apl_document("images.json")
-
-- 10 Objekte implementieren:
-    - DONE Daniela: Berge (graph), Boot, wissenschaftlerin
-    - Lea: Fridays for Future, DONE: Saturn, matheformel (oben rechts)
-    - DONE Niklas: gelbe Uhr, Argon (chemie zeugs), hello world
-
-- je Objekt 1-2 weitere strings in utterances.json:
-    - DONE good mood: (niklas)
-to do bis Sonntag
-- DONE von S3 auf links umstellen 
-- mehr utterances in den intents beim build
-- mehr strings in utterances.json
-
-FRAGEN an Maike: 
-- Wie abfangen, dass was genannt wird, womit sie nicht rechnet?
-- Alles abfangen, ausser die Objekte, die in den Intens definiert sind, usw?
-- DONE Bye-Bild wird nicht gezeigt (CancelOrStopIntentHandler)?
-
-TODO: 
-- Dani: already_mentions und no_clue, no_again, bye mehr Sätze
-- Dani: Hilfe Intent im mood intent benennen 

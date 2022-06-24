@@ -1,0 +1,108 @@
+
+    {
+    "type": "APL",
+    "version": "1.8",
+    "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+    "settings": {},
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-viewport-profiles",
+            "version": "1.0.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Frame",
+                "height": "100vh",
+                "width": "100vw",
+                "backgroundColor": "#FF0000",
+                "items": [
+                    {
+                        "type": "Container",
+                        "height": "100vh",
+                        "width": "100vw",
+                        "items": [
+                            {
+                                "source": "https://i.imgur.com/EpBX3Gh.png",
+                                "scale": "fill",
+                                "type": "Image",
+                                "width": "100vw",
+                                "height": "100vh",
+                                "position": "relative",
+                                "top": "0vw"
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "15vw",
+                                "height": "10vw",
+                                "position": "absolute",
+                                "bottom": "0vw",
+                                "right": "0vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "15vw",
+                                    "height": "10vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "boot"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "15vw",
+                                "height": "10vw",
+                                "position": "absolute",
+                                "top": "18vw",
+                                "right": "0vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "15vw",
+                                    "height": "10vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "biene"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "15vw",
+                                "height": "10vw",
+                                "position": "absolute",
+                                "top": "0vw",
+                                "left": "0vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "15vw",
+                                    "height": "10vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "saturn"]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

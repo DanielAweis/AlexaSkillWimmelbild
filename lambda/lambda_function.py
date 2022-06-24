@@ -2,6 +2,7 @@
 
 import logging
 import json
+import random as random 
 
 # DW: brauchen os für S3Adapter()
 import os
@@ -53,6 +54,8 @@ from saturn import SaturnIntentHandler
 from fff import FridaysIntentHandler
 from mathe import MatheIntentHandler
 
+from alexas_turn import AlexasTurnIntentHandler
+
 # Helper functions
 # utterances handler for choosen personality
 from utterances import choose_utterance, UTTERANCES
@@ -97,38 +100,6 @@ class LaunchRequestHandler(AbstractRequestHandler):
                 ))
         
         return response_builder.speak(speak_output).response
-
-
-"""class HelloWorldIntentHandler(AbstractRequestHandler):
-    #Handler for Hello World Intent.
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("HelloIntent")(handler_input)
-
-    def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-        speak_output = "Hello World!"
-
-        if get_supported_interfaces(handler_input).alexa_presentation_apl is not None:
-            return (
-                handler_input.response_builder
-                    .speak(speak_output)
-                    # .ask("add a reprompt if you want to keep the session open for the user to respond")
-                    .add_directive(
-                        RenderDocumentDirective(
-                            token="pagerToken",
-                            document=_load_apl_document("jsondata/document.json"),
-                            datasources=_load_apl_document("jsondata/default.json")
-                        )
-                    )
-                    .response
-            )
-        else:
-            return (
-                handler_input.response_builder
-                .speak("Nö.")
-                .response
-            )"""
 
 
 class HelpIntentHandler(AbstractRequestHandler):
@@ -282,6 +253,7 @@ sb.add_request_handler(BoatIntentHandler())
 sb.add_request_handler(SaturnIntentHandler())
 sb.add_request_handler(FridaysIntentHandler())
 sb.add_request_handler(MatheIntentHandler())
+sb.add_request_handler(AlexasTurnIntentHandler()) 
 
 # here all intents within this file: 
 sb.add_request_handler(LaunchRequestHandler())

@@ -37,8 +37,8 @@
             "<amazon:emotion name='excited' intensity='high'> Der Weltraum. Unendliche Weiten. Ein knallrotes Fernrohr. Richtig geraten? </amazon:emotion>"
         ],
         "yes": [
-            "<amazon:emotion name='excited' intensity='medium'> Super! Auf in die naechste Runde. Beschreib mir ein Objekt im Wimmelbild. </amazon:emotion>",
-            "<amazon:emotion name='excited' intensity='medium'> Alles klar, das machen wir am Besten gleich nochmal. Such dir ein neues Objekt aus! </amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='medium'> Super! Auf in die naechste Runde. Dann bin ich jetzt dran und beschreibe dir ein Objekt im Wimmelbild. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Alles klar, das machen wir am Besten gleich nochmal umgedreht. Jetzt beschreibe ich dir ein Objekt. </amazon:emotion>"
         ],
         "no_stop": [
             "<amazon:emotion name='excited' intensity='low'> Ich glaub ich schnall leider nicht, was du meinst - beschreib mir bitte ein komplett anderes Objekt. </amazon:emotion>",
@@ -113,6 +113,15 @@
         "fridays": [
             "<amazon:emotion name='excited' intensity='medium'> Wir müssen unser Klima schützen! Meinst du Fridays for Future? </amazon:emotion>",
             "<amazon:emotion name='excited' intensity='medium'> Ah, ich weiß, Fridays for Future? Wir müssen unsere Erde retten!. </amazon:emotion>"
+        ],
+        "alexa_saturn": [
+            "<amazon:emotion name='excited' intensity='medium'> Au ja, ich hab richtig Lust was zu beschreiben. Also, es ist ein Objekt aus unserem tollen Sonnensystem. Auf dem Bild ist es ganz rund und gelb. Weißt du, was ich meine? Dann klicke es an!</amazon:emotion>"
+        ],
+        "alexa_boot": [
+            "<amazon:emotion name='excited' intensity='medium'> Ah, ich weiß, was ich dir an diesem schönen tag beschreiben möchte: Es schwimmt auf dem Wasser, ist aber kein Tier. Wenn du weißt, was es ist, klick es an!. </amazon:emotion>"
+        ],
+        "alexa_biene": [
+            "<amazon:emotion name='excited' intensity='medium'> Es ist ein kleines gelbes Insekt. na, weißt du was ich meine? dann klicke es an! </amazon:emotion>"
         ]
     },
     "bad_mood": {
@@ -229,6 +238,15 @@
         "fridays": [
             "<amazon:emotion name='excited' intensity='medium'> Meinst du etwa Fridays for Future? Also ich finde ja, dass Kinder blöd sind... </amazon:emotion>",
             "<amazon:emotion name='excited' intensity='medium'> Das Klima ist mir ehrlich gesagt ziemlich egal, solange ich meine Ruhe haben kann. Ist es Fridays for Future? </amazon:emotion>"
+        ],
+        "alexa_saturn": [
+            "<amazon:emotion name='excited' intensity='low'>  Baaahhh.. Ich bin schon wieder dran? Naja, okay. Das Ding hat nen Ring um sich. Oder so. Klick das Ding an. </amazon:emotion>"
+        ],
+        "alexa_boot": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich bin an der Reihe? Menno. Okay, klick das Ding an, dass auf dem Wasser schwimmt. </amazon:emotion>"
+        ],
+        "alexa_biene": [
+            "<amazon:emotion name='excited' intensity='low'> Okay, ich bin wohl wieder dran. So ein Mist. Klick das eklige Viech mit den Streifen an. </amazon:emotion>"
         ]
     }
 }
