@@ -1,4 +1,5 @@
 # DW: this handels the Event after Alexa described an object
+import time
 
 import ask_sdk_core.utils as ask_utils
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
@@ -17,6 +18,7 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
     
     # Documents for rendering visual response
     template_apl = load_apl_document("jsondata/main_apl_template.json")
+    alexas_turn = load_apl_document("jsondata/alexas_turn.json")
     data_apl = load_apl_document("jsondata/data_apl_template.json")
     images = load_apl_document("images.json")
     
@@ -47,24 +49,63 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
         
+        ###
+        statistics = attributes_manager.persistent_attributes["statistics"]
+        ###
+        
         # get actual described object
         act_object = attributes_manager.persistent_attributes["act_object"]
         
         # TODO: Die Äusserungen im json erweitern und hier wieder auswählen für mehr Varianz.
+        
         if act_object == alexas_turn:
+            statistics["user"]["correct_obj"] += 1
+            
+            user_start_timestamp = statistics["user"]["start_timestamp"] 
+            user_end_time = time.monotonic()
+            delta_time = user_end_time - user_start_timestamp
+            statistics["user"]["duration_in_sec"] += delta_time
+            statistics["user"]["start_timestamp"] = time.monotonic()
+            
             speak_output = "Yay, du hast es richtig erraten. Jetzt bist du wieder dran. Beschreib mir ein neues Objekt auf dem Bild!"
+            ###
+            # update persistent memory with new attributes
+            attributes = {
+                "mood": mood, 
+                "wrong_counter": wrong_counter, 
+                "already_mentioned": already_mentioned,
+                "statistics": statistics
+            }
+            attributes_manager.persistent_attributes.update(attributes)
+            attributes_manager.save_persistent_attributes()
+            ###
+            
+            response_builder = handler_input.response_builder
+            
+            if get_supported_interfaces(
+                    handler_input).alexa_presentation_apl is not None:
+                response_builder.add_directive(
+                    RenderDocumentDirective(
+                        token="beeToken",
+                        document = self.template_apl,
+                        datasources = self.data_apl
+                    ))
+            
+            return response_builder.speak(speak_output).response
+            
         else: 
-            speak_output = "Mhhh, das meinte ich nicht. Versuch es nochmal!"
-
-        response_builder = handler_input.response_builder
+            speak_output = "Mhhh, das meinte ich nicht. Versuch es nochmal! Klick ein anderes Objekt auf dem Bild an!"
+            response_builder = handler_input.response_builder
+            
+            if get_supported_interfaces(
+                    handler_input).alexa_presentation_apl is not None:
+                response_builder.add_directive(
+                    RenderDocumentDirective(
+                        token="WimmelbildToken",
+                        document = self.alexas_turn,
+                        datasources = self.data_apl
+                    ))
+            
+            return response_builder.speak(speak_output).response
+            
         
-        if get_supported_interfaces(
-                handler_input).alexa_presentation_apl is not None:
-            response_builder.add_directive(
-                RenderDocumentDirective(
-                    token="beeToken",
-                    document = self.template_apl,
-                    datasources = self.data_apl
-                ))
-        
-        return response_builder.speak(speak_output).response

@@ -1,3 +1,5 @@
+import time
+
 import ask_sdk_core.utils as ask_utils
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.utils import get_supported_interfaces
@@ -34,17 +36,20 @@ class YesIntentHandler(AbstractRequestHandler):
         mood = attributes_manager.persistent_attributes["mood"]
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         
-        # reset wrong_counter and already_mentioned because new round
-        # update persistent memory with new wrong_counter and already_mentioned
-        already_mentioned.clear()
-        attributes = {
-            "mood": mood, 
-            "wrong_counter": 0, 
-            "already_mentioned": already_mentioned  # Könnte man hier nicht einfach leere Liste?
-            
-        }
-        attributes_manager.persistent_attributes.update(attributes)
-        attributes_manager.save_persistent_attributes()
+        ### DW: STATISTICS ###
+        # Correkt Objekts
+        statistics = attributes_manager.persistent_attributes["statistics"]
+        statistics["alexa"]["correct_obj"] += 1
+        # Alexas Time berechnen und in statistics ablegen
+        alexas_start_timestamp = statistics["alexa"]["start_timestamp"] 
+        alexas_end_time = time.monotonic()
+        delta_time = alexas_end_time - alexas_start_timestamp
+        statistics["alexa"]["duration_in_sec"] += delta_time
+        statistics["alexa"]["start_timestamp"] = time.monotonic()
+        # USER Time starten und ablegen
+        user_start_timestamp = time.monotonic()
+        statistics["user"]["start_timestamp"] = user_start_timestamp
+        ###
         
         # DW: Afer the YesIntent was triggered Alexas gets her turn
         # for now simply random choice without storing the already mentioned objects
@@ -56,13 +61,14 @@ class YesIntentHandler(AbstractRequestHandler):
         
         # reset wrong_counter and already_mentioned because new round
         # update persistent memory with new wrong_counter and already_mentioned
-        # and act_object
+        # and act_object and statistics
         already_mentioned.clear()
         attributes = {
             "mood": mood, 
             "wrong_counter": 0, 
             "already_mentioned": already_mentioned,  # Könnte man hier nicht einfach leere Liste?
-            "act_object": act_object
+            "act_object": act_object,
+            "statistics": statistics
         }
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()

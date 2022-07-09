@@ -1,0 +1,13 @@
+{
+    "statData": {
+        "type": "object",
+        "sources": [
+            {
+            "correctCountAlexa": 0, 
+            "correctCountUser": 0,
+            "AvTimeAlexa": 0,
+            "AvTimeUser": 0
+            }
+            ]
+    }
+}

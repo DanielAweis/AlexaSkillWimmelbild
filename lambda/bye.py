@@ -1,3 +1,5 @@
+import time
+
 import ask_sdk_core.utils as ask_utils
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.utils import get_supported_interfaces
@@ -14,13 +16,14 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
     """Single handler for Cancel and Stop Intent."""
     
     # Documents for rendering visual response
-    template_apl = load_apl_document("jsondata/main_apl_template.json")
-    data_apl = load_apl_document("jsondata/data_apl_template.json")
-    images = load_apl_document("images.json")
+    template_apl = load_apl_document("statistik_apl.json")
+    data_apl = load_apl_document("data_statistik_apl.json")
     
-    #TODO: upload bye bye image 
     
-    data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = images["bye"]["image"]
+    data_apl["statData"]["sources"][0]["correctCountAlexa"] = 42
+    # data_apl["statData"]["sources"][0]["correctCountUser"] = ANZAHL_OBJEKTE
+    # data_apl["statData"]["sources"][0]["AvTimeAlexa"] = ZEIT_ALEXA
+    # data_apl["statData"]["sources"][0]["AvTimeUser"] = ZEIT_USER
     
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
@@ -32,7 +35,22 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
         
-        speak_output = choose_utterance(mood, "bye")
+        ### STATISTICS ###
+        statistics = attributes_manager.persistent_attributes["statistics"]
+        
+        # USER
+        user_correct_obj = statistics["user"]["correct_obj"]
+        user_time = statistics["user"]["duration_in_sec"]
+        user_minutes, user_seconds = divmod(user_time, 60)
+        
+        # ALEXA
+        alexa_correct_obj = statistics["alexa"]["correct_obj"]
+        alexa_time = statistics["alexa"]["duration_in_sec"]
+        alexa_minutes, alexa_seconds = divmod(alexa_time, 60)
+        ##################
+        
+        # TODO: Mehr Äusserungen mit f string in json 
+        speak_output = choose_utterance(mood, "bye") + f" Insgesamt hast du {user_correct_obj} Objekte richtig erraten und hast {user_minutes:0.0f} Minuten und {user_seconds:0.0f} Sekunden gebraucht. Und ich habe {alexa_correct_obj} richtig erraten und habe {alexa_minutes:0.0f} Minuten und {alexa_seconds:0.0f} Sekunden gebraucht."
 
         response_builder = handler_input.response_builder
         response_builder.set_should_end_session(True)

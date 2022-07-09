@@ -2,17 +2,37 @@ To do:
 
 Aufgabenteilung: 
     Niklas:
-        - DONE: Endbildschirm mit Statistik
+        - Statistik: Hintergrund Bye-Bildschirm oder "Tafel"
         - Touch-Objekte Photoshop
         - Optimierung TW- Bei TWs immer Objekte benennen (Sandbox)
-    Dani: Statistik, Speichern genannter Objekte (Boot, Biene Saturn)
+        - DONE: Statistik in bye.py 
+    Dani: 
+        - DONE: AlexasTurn implementieren 
+        - DONE: Statistik mit: attributes_manager = handler_input.attributes_manager
+        - DONE: zeitmessungen für statistiken
+        - Turn-Taking ausbauen
+        - Speichern genannter Objekte (Boot, Biene Saturn)
         - Turntaking nach 3 mal Falsch geraten
         - aufschreiben 
-    Lea: Struktur, Intents
-        - zeitmessungen für statistiken
-        - Bericht einrichten
+    Lea: 
+        - DONE: Bericht einrichten
         
 Nebenher NOTIZEN für Bericht machen
 Beim sprachlichen Reagieren auf AlexasTurn eine gute Vorgabe für den User machen!
 
-
+- nach 10 Objekten von Alexa -> bye bildschirm
+    - in yes und no intent einbauen
+    
+# TODO sobald wir fertig sind mit unseren 3 Objekten:    
+- in allen schon implementierten Objekten die statistics in persistent_attributes einfügen:
+    statistics = attributes_manager.persistent_attributes["statistics"]
+    
+    # update persistent memory with new wrong_counter and already_mentioned
+        attributes = {
+            "mood": mood, 
+            "wrong_counter": wrong_counter, 
+            "already_mentioned": already_mentioned,
+            "statistics": statistics
+        }
+        attributes_manager.persistent_attributes.update(attributes)
+        attributes_manager.save_persistent_attributes()

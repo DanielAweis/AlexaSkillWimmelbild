@@ -34,6 +34,9 @@ class BoatIntentHandler(AbstractRequestHandler):
         # Identify chosen mood.
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
+        ###
+        statistics = attributes_manager.persistent_attributes["statistics"]
+        ###
         
         ######## DW: TODO for all objects:
         # copy and paste this and change the object name above
@@ -63,7 +66,8 @@ class BoatIntentHandler(AbstractRequestHandler):
         attributes = {
             "mood": mood, 
             "wrong_counter": wrong_counter, 
-            "already_mentioned": already_mentioned
+            "already_mentioned": already_mentioned,
+            "statistics": statistics
         }
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()

@@ -1,3 +1,5 @@
+import time
+
 import ask_sdk_core.utils as ask_utils
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.utils import get_supported_interfaces
@@ -44,7 +46,29 @@ class PersonalityIntentHandler(AbstractRequestHandler):
         # Save mood to persistent memory and initialize wrong_counter with 0
         # and initialize already_mentioned with a empty list
         attributes_manager = handler_input.attributes_manager
-        attributes = {"mood": mood, "wrong_counter": 0, "already_mentioned":[]}
+        
+        # As the user starts with explaining, alexas time starts now
+        start_timestamp = time.monotonic()
+        
+        attributes = {
+            "mood": mood, 
+            "wrong_counter": 0,
+            # already_mentioned only for alexa 
+            "already_mentioned":[],
+            "statistics": {
+                "user": {
+                    "start_timestamp": 0,
+                    "duration_in_sec": 0,
+                    "correct_obj":0
+                },
+                "alexa": {
+                    "start_timestamp": start_timestamp,
+                    "duration_in_sec": 0,
+                    "correct_obj":0
+                }
+            }
+        }  
+        
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()
         
