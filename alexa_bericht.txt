@@ -1,0 +1,236 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage{acl}
+
+% Um Links in den Quellenangaben zu setzten
+\usepackage{hyperref}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+\usepackage{graphicx} 
+
+% ----------------CODE----------------------------
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+   backgroundcolor=\color{backcolour},   
+   commentstyle=\color{codegreen},
+   keywordstyle=\color{magenta},
+   numberstyle=\tiny\color{codegray},
+   stringstyle=\color{codepurple},
+   basicstyle=\ttfamily\footnotesize,
+   breakatwhitespace=false,         
+   breaklines=true,                 
+   captionpos=b,                    
+   keepspaces=true,                 
+   numbers=left,                    
+   numbersep=5pt,                  
+   showspaces=false,                
+   showstringspaces=false,
+   showtabs=false,                  
+   tabsize=2
+}
+
+\lstset{style=mystyle}
+% ----------------CODE----------------------------
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Interaktionsdesign für sprachbasierte Assistenzsysteme\\
+Kooperatives Wimmelbild-Spiel mit Alexa\\
+Projektbericht}
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a seperate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+\author{Lea Wetzke, Niklas Bitomsky, Daniela Weiß \\
+  Department Linguistik\\
+  BSc Computerlinguistik \\
+  Modul: Anwendungen der Computerlinguistik}
+
+\begin{document}
+\maketitle
+
+\section{Einleitung: Wimmelbild-Skill}
+In unserem Wimmelbild-Skill kann der/die User*in mit Alexa zusammen ein Spiel spielen. Dabei geht es darum, Objekte auf einem von Alexa auf ihrem Screen gezeigten Bild zu beschreiben und zu raten. Die Rollen werden nach jedem richtig erratenen Objekt getauscht. \\
+
+\subsection{User*in Turn}
+Das Spiel beginnt immer damit, dass der/die User*in sich eines von den 20 beschreibbaren Objekten aussucht und dieses dann in den eigenen Worten umschreibt, so dass Alexa das Objekt erraten kann. Schafft es Alexa nicht, kann sie um eine erneute Erklärung bitten. Um am natürlich sprachlichen Interaktionsfluss orientiert zu bleiben, kann Alexa sich aber nicht unendlich oft, das gewählte Objekt beschreiben lassen, sondern nur drei mal, danach werden die Rollen getauscht. Alexa merkt sich zudem, welche Objekte sie schon genannt hat und sucht ein noch ungenanntes Objekt für diese Runde aus.\\
+
+\subsection{Alexas Turn}
+Sobald Alexa das von dem/der User*in beschriebene Objekt erraten hat oder sie drei falsche Angebote gemacht hat, geht der Turn an Alexa weiter und sie beschreibt ein Objekt aus zehn ausgewählten Objekten, das erraten werden soll. Dabei zeigt sie das modifizierte Wimmelbild, auf dem die zehn Objekte eingerahmt sind und mit einem Touch-Wrapper einen Click-Event feuern. Nachdem Alexa eine Bescheribung geäußert hat, wird der/die User*in dazu aufgefordert, dass richtige Objekt anzuklicken. Auch hierbei gibt es ein gesetztes Limit: Nach drei erfolglosen Versuchen werden wieder die Rollen getauscht.\\ 
+
+\subsection{Statistik}
+Sobald das Spiel beendet ist oder von dem/der User*in beendet wird, zeigt Alexa eine Statistik, auf der sie jeweils die Anzahl der richtig erratenen Objekte zusammen mit der Zeit, die benötigt wurde, darstellt, bevor sie sich verabschiedet.\\ 
+
+
+\subsection{Personality}
+Es gibt zwei verschiedene Persönlichkeiten von Alexa, mit denen das Wimmelbildspiel gespielt werden kann: die unfreundliche, schlecht gelaunte Alexa und die freundliche gut gelaunte Alexa. Mit welcher Alexa gespielt werden möchte, wird zu Beginn des Spieles ausgewählt und bleibt im laufe des Spiels gleich. Beide Persönlichkeiten wurden in der Art der Äußerungemodellierung geformt und sie leicht bis stark überzogen um das Spiel amüsanter zu gestalten.\\
+
+\section{Unser Model}
+- wie soll der Dialogfluss und das Sprachverstehen in der Theorie funktionieren?\\
+\subsection{erfolgreichen Interaktion}
+- Definition einer erfolgreichen Interaktion\\
+- was sind Qualitätsmerkmale, an denen ihr eure Interaktion später messen wollt?\\
+
+
+\section{Implementierung}
+
+Besonders wichtig war es uns, einen möglichst natürlich sprachlichen Dialog zu modellieren. Wir wollten so nah wie möglich, an den Dialogflow herankommen, wie er von zwei Menschen, die diese Art Spiele spielen, kreiert wird. Dafür haben wir viele verschiedene Äußerungen geschrieben, aus denen jeweils random eine ausgewählt wird, um eine möglichst hohe Varianz zu erzielen. Des Weiteren wird der/die User*in mittels Bilder, die Alexa auf ihrem Screen zeigt, auch visuell durch das Spiel geleitet.\\ 
+
+\subsection{Dialogflow und Interaktionsdesign}
+
+\subsubsection{Alexas Persönlichkeit und der S3Adapter}
+Sobald der/die User*in den Wimmelbild-Skill triggert, zeigt Alexa ein Bild mit zwei Auswahlmöglichkeiten und stellt die Frage, wie sie bei dem Spiel gelaunt sein möchte. Die Auswahl kann sowohl verbal geäußert werden als auch über einen Klick auf das entsprechende Bild. \\
+
+% ----------------CODE----------------------------
+\begin{lstlisting}[breaklines=true, language=Python]
+def can_handle(self, handler_input):
+    # type: (HandlerInput) -> bool
+    # Check if a button was pressed
+    request = handler_input.request_envelope.request
+    if isinstance(request, UserEvent):
+        # Check arguments for right values
+        return len(request.arguments) > 0 and request.arguments[0] == "mood"
+    return ask_utils.is_intent_name("PersonalityIntent")(handler_input)
+\end{lstlisting}
+% ------------------------------------------
+
+Daraufhin wird Alexa während des gesamten Spiels in der ausgewählten Persönlichkeit bleiben. Das Attribut mood wird mittels des 'S3Adapter' gespeichert und somit zugänglich abgelegt für den weiteren Verlauf des Spiels. Um den S3Adapter, den Alexa mit dem Import von 'ask-sdk-s3-persistence-adapter' integriert wird, in den Intents zu benutzen, mussten wird den 'SkillBuilder' mit dem 'CustomSkillBuilder' ersetzten. Und um den 'S3Adapter' im 'CustomSkillBuilder' zu integrieren, haben wir dem Parameter 'persistence\_adapter' das Argument 's3\_adapter' übergeben. Im weiteren Verlauf benutzen wir für das intentübergreifende Speichern von Daten immer den 'S3Adapter'.\\
+
+% ----------------CODE----------------------------
+\begin{lstlisting}[breaklines=true, language=Python]
+# initiate persistent memory with attributes
+attributes = {
+    "mood": mood, 
+    "wrong_counter": 0,
+    # already_mentioned only for alexa 
+    "already_mentioned":[],
+    "statistics": {
+        "user": {
+            "start_timestamp": 0,
+            "duration_in_sec": 0,
+            "correct_obj":0
+        },
+        "alexa": {
+            "start_timestamp": start_timestamp,
+            "duration_in_sec": 0,
+            "correct_obj":0
+        }
+    }
+}  
+\end{lstlisting}
+% ------------------------------------------
+
+
+\subsubsection{User*in Turn}
+Nachdem der/die User*in sich für die aktuell gewünschte Laune von Alexa entschieden hat beginnt das Spiel, indem Alexa auf ihrem Bildschirm das Wimmelbild zeigt und ihre/n Mitspieler*in dazu auffordert eines der dort zu sehenden Objekte zu beschreiben. Für zwanzig auf dem Wimmelbild enthaltenen Objekte haben wir jeweils einen separaten Intents implementiert, welche durch bestimmte Äußerungen des/der erklärenden User*in getriggert werden sollen. Dafür haben wir auch im 'Interaction Model' diese Intents angelegt und uns für eine Auswahl an 'Sample Utterances' entschieden. Wird eines dieser Intents durch die Beschreibung getriggert, zeigt der Intent das Bild passend zu dem Objekt, von dem Alexa glaub, welches zur Beschreibung passt und fragt, ob sie damit richtig liegt. Falls der/die User*in bestätigt, wird der 'YesIntent' getriggert, in welchem der Rollentausch geschieht und Alexa ein Objekt erklärt. Falls Alexa das Objekt nicht innerhlab von 3 Versuchen errät, gibt es dennoch einen Rollentausch. Diese Bedingung haben wir im NoIntent implementiert. \\
+
+% ----------------CODE----------------------------
+\begin{lstlisting}[breaklines=true, language=Python]
+if wrong_counter <= 3:
+    speak_output = choose_utterance(mood, "no_again")
+else:
+    wrong_counter = 0
+    already_mentioned.clear()
+    speak_output = choose_utterance(mood, "no_stop")
+    # TODO: Alexas_Turn
+\end{lstlisting}
+% ------------------------------------------
+
+
+\subsubsection{Alexas Turn}
+Die Objektbeschreibung von Alexa haben wir im 'YesIntent' implementiert. Aus der Liste mit zehn Objekten wird random eines ausgewühlt und die Beschreibung dafür aus dem JSON-File ausgegeben. Der/Die User*in hat nun, nachdem er/sie die Beschreibung gehört hat, die Möglichkeit, ein Objekt auf dem dann gezeigten Bild anzuklicken. Damit wir der 'AlexasTurnIntent' getriggert. Nicht wie bei den zuvor beschriebenen Verfahren, haben wir uns entschieden hier nicht für jedes der Objekte einen separaten Intent zu implementieren, sondern einen, im dem geprüft wird, ob das Objekt, welches Alexa beschrieben hat, mit dem übereinstimmt, welches der/die User*in angeklickt hat. Falls richtig erraten wurde, werden wieder die Rollengetauscht und der Diallogfluss beginnt erneut. Wenn falsch geklickt wurde, dann zeigt Alexa wieder das anklichbare Bild und fordert einen erneuten Tip abzugeben. Falls auch hier wieder drei Mal falsch anklicken überschritten wird, werden wieder die Rollen getauscht und Alexa darf wieder raten. \\
+
+\subsubsection{Statistik}
+Das Tracken der Anzahl, der schon richtig erratenen Objekte und der Zeitmessung für beide Spieler*innen geschieht wieder mittels des 'S3Adapters' und mit 'time.monotonic()'. Im 'AlexaTurIntent' tracken wir die daten zum User.\\ 
+
+% ----------------CODE----------------------------
+\begin{lstlisting}[breaklines=true, language=Python]
+if act_object == alexas_turn:
+    statistics["user"]["correct_obj"] += 1
+    
+    user_start_timestamp = statistics["user"]["start_timestamp"] 
+    user_end_time = time.monotonic()
+    delta_time = user_end_time - user_start_timestamp
+    statistics["user"]["duration_in_sec"] += delta_time
+    statistics["user"]["start_timestamp"] = time.monotonic()se_utterance(mood, "no_stop")
+
+\end{lstlisting}
+% ------------------------------------------
+Äquivalent dazu werden im 'YesIntent' die daten von Alexa mitgeschrieben. Am Ende des Spiel werde aus dem 'S3Adapter' die jeweiligen Daten der beiden Spieler*innen für den End-Bildschirm ausgelesen und eingefügt. 
+
+\subsection{Utterances: Varianz in den Äußerungen}
+pass 
+
+\subsection{APL: Unterstützung des Skills durch Bilder und Touch-Events}
+pass
+
+\section{Evaluation}
+- an Hand der vorher festgelegten Qualitätsmerkmale
+
+\section{Abschließendes und Zukünftiges}
+Das sind nur Fragen , um Ideen zum Schreiben zu bekommen ;-).
+\subsection{Was haben wir gelernt?}
+pass
+\subsection{Was hat besonders Schwierigkeiten bereitet?}
+pass
+\subsection{Was würden wir besser machen?}
+pass
+
+
+% ----------------BILD----------------------------
+%\begin{figure}[htbp] 
+% \centering
+%     \includegraphics[width=0.5\textwidth]{final_barplot.png}
+%  \caption{Ergebnisse der Maßanwendung}
+%  \label{fig:Bild1}
+%\end{figure}
+% -----------------------------------------------
+
+
+\section{Quellenangabe}
+ \href{https://leaherb.com/add-persistent-data-amazon-s3-custom-alexa-skill/}{Add Persistent Data to a Custom Alexa Skill using Amazon S3}.
+\end{document}
