@@ -1,38 +1,48 @@
-To do:
+aktuelle und fertige TODOs:
 
 Aufgabenteilung: 
     Niklas:
-        - Statistik: Hintergrund Bye-Bildschirm oder "Tafel"
-        - Touch-Objekte Photoshop
-        - Optimierung TW- Bei TWs immer Objekte benennen (Sandbox)
+        - BYE-Intent durchschnittliche Zeit berechnen und Wete in den Bildschirm übergeben
+        # TODO: durchschnittliche zeit berechnen
+        # TODO: einbauen der Werte in den Bye-Screen
+        - DONE: Statistik: Hintergrund Bye-Bildschirm oder "Tafel"
+        - DONE: Touch-Objekte Photoshop
+        - DONE: Optimierung TW- Bei TWs immer Objekte benennen (Sandbox)
         - DONE: Statistik in bye.py 
     Dani: 
         - DONE: AlexasTurn implementieren 
         - DONE: Statistik mit: attributes_manager = handler_input.attributes_manager
-        - DONE: zeitmessungen für statistiken
+        - DONE: basic zeitmessungen für statistiken
+        - DONE: für alle 10 Objekte (Alexa) einen Slot Values im alexa_turn Slot und alle werte geprüft und geadded
+        - DONE: in allen schon implementierten Objekten die statistics in persistent_attributes einfügen
         - Turn-Taking ausbauen
         - Speichern genannter Objekte (Boot, Biene Saturn)
         - Turntaking nach 3 mal Falsch geraten
-        - aufschreiben 
     Lea: 
         - DONE: Bericht einrichten
         
-Nebenher NOTIZEN für Bericht machen
-Beim sprachlichen Reagieren auf AlexasTurn eine gute Vorgabe für den User machen!
+##################      
+zukünftige TODOs:
+# TODO: Mehr Äusserungen mit f string in json im bye intent (siehe zeile 55)
+# TODO: Mehr Äusserungen mit f string in json im alexas_turn intent (siehe zeile 72)
 
+- in den utterances.json sind jetzt ganz simple Äußerungen für alexas_turn
+  Hier muss mehr Varianz rein und auch das amazon:emotion name= muss angepasst werden
+
+- mehr varianz auch für den Bye-Screen (?) aber auf jeden Fall für die Äußerungen
+    IDEE: villt besonders erfreut, wenn sie selbst besser war oder ermutigend für den user usw
 - nach 10 Objekten von Alexa -> bye bildschirm
-    - in yes und no intent einbauen
-    
-# TODO sobald wir fertig sind mit unseren 3 Objekten:    
-- in allen schon implementierten Objekten die statistics in persistent_attributes einfügen:
-    statistics = attributes_manager.persistent_attributes["statistics"]
-    
-    # update persistent memory with new wrong_counter and already_mentioned
-        attributes = {
-            "mood": mood, 
-            "wrong_counter": wrong_counter, 
-            "already_mentioned": already_mentioned,
-            "statistics": statistics
-        }
-        attributes_manager.persistent_attributes.update(attributes)
-        attributes_manager.save_persistent_attributes()
+    (in yes und no intent einbauen)
+- Statistic: einbauen der Werte in den Bye-Screen und durchschnittliche zeit berechnen
+- speichern der schon erklärten vom user... 
+    dann reagiert alexa anders oder sollen wir es gar nicht zulassen, dass der User mehrmals das gleiche erklärt?
+- Erkennt Alexa, wenn die Wörter in einem Satz vorkommen? Sample Utterances weiter ausbauen für die 20 intents ? 
+- 
+
+##################   
+
+Bericht: 
+- große Äußerungs-Json hätte lieber aufpesplittet werden
+- man hätte diese 20 Objekte für den Users_turn effizienter implementieren können (aber was wäre mit den Sample Utterances?)
+- Probleme mit APL und mit Alexa Dokumentation für Python 
+- User-freundliche Gedanken zur visulen Anleitung (durch markieren)

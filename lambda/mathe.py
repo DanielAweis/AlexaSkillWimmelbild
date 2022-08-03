@@ -59,11 +59,15 @@ class MatheIntentHandler(AbstractRequestHandler):
                 already_mentioned.clear()
                 speak_output = choose_utterance(mood, "no_stop")
                 
+        # get statistics
+        statistics = attributes_manager.persistent_attributes["statistics"]
+               
         # update persistent memory with new wrong_counter and already_mentioned
         attributes = {
             "mood": mood, 
             "wrong_counter": wrong_counter, 
-            "already_mentioned": already_mentioned
+            "already_mentioned": already_mentioned,
+            "statistics": statistics
         }
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()

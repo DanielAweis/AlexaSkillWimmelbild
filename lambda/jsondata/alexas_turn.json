@@ -66,7 +66,7 @@
                                 "width": "15vw",
                                 "height": "10vw",
                                 "position": "absolute",
-                                "top": "18vw",
+                                "top": "19vw",
                                 "right": "0vw",
                                 "item": {
                                     "type": "Frame",
@@ -97,6 +97,139 @@
                                 "onPress": {
                                     "type": "sendEvent",
                                     "arguments": ["alexas_turn", "saturn"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "15vw",
+                                "height": "10vw",
+                                "position": "absolute",
+                                "top": "14vw",
+                                "right": "30vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "15vw",
+                                    "height": "10vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "globus"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "15vw",
+                                "height": "10vw",
+                                "position": "absolute",
+                                "bottom": "4vw",
+                                "left": "15vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "15vw",
+                                    "height": "10vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "europa"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "13vw",
+                                "height": "10vw",
+                                "position": "absolute",
+                                "top": "6vw",
+                                "left": "26vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "13vw",
+                                    "height": "10vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "fff"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "18vw",
+                                "height": "11vw",
+                                "position": "absolute",
+                                "top": "23vw",
+                                "left": "28vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "18vw",
+                                    "height": "11vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "konsole"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "11vw",
+                                "height": "10vw",
+                                "position": "absolute",
+                                "top": "0vw",
+                                "left": "39vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "11vw",
+                                    "height": "10vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "fernrohr"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "8vw",
+                                "height": "11vw",
+                                "position": "absolute",
+                                "top": "29vw",
+                                "left": "11vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "8vw",
+                                    "height": "11vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "stift"]
+                                }
+                            },
+                            {
+                                "type": "TouchWrapper",
+                                "width": "15vw",
+                                "height": "11vw",
+                                "position": "absolute",
+                                "top": "0vw",
+                                "right": "18vw",
+                                "item": {
+                                    "type": "Frame",
+                                    "width": "15vw",
+                                    "height": "11vw",
+                                    "borderWidth": "1vw",
+                                    "borderColor": "#424242"
+                                },
+                                "onPress": {
+                                    "type": "sendEvent",
+                                    "arguments": ["alexas_turn", "mathe"]
                                 }
                             }
                         ]

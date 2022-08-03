@@ -53,7 +53,9 @@ class YesIntentHandler(AbstractRequestHandler):
         
         # DW: Afer the YesIntent was triggered Alexas gets her turn
         # for now simply random choice without storing the already mentioned objects
-        act_object = random.choice(["saturn", "boot", "biene"])
+        # TODO: storing the already mentioned objects
+        alexas_objects = ["globus", "europa", "fff", "konsole", "saturn", "boot", "biene", "fernrohr", "stift", "mathe"]
+        act_object = random.choice(alexas_objects)
         # utterances are in the same file, so we have to distinct between which utterances should be used:
         # for now when Alexa describe an object the prefix "alexa_" is used
         act_obj_utterance = "alexa_" + act_object

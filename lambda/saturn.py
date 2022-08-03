@@ -34,9 +34,6 @@ class SaturnIntentHandler(AbstractRequestHandler):
         # Identify chosen mood.
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
-        ###
-        statistics = attributes_manager.persistent_attributes["statistics"]
-        ###
         
         ######## DW: TODO for all objects:
         # copy and paste this and change the object name above
@@ -62,6 +59,9 @@ class SaturnIntentHandler(AbstractRequestHandler):
                 already_mentioned.clear()
                 speak_output = choose_utterance(mood, "no_stop")
                 
+        # get statistics
+        statistics = attributes_manager.persistent_attributes["statistics"]
+               
         # update persistent memory with new wrong_counter and already_mentioned
         attributes = {
             "mood": mood, 

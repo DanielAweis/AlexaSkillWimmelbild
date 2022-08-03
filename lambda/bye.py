@@ -49,7 +49,9 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
         alexa_minutes, alexa_seconds = divmod(alexa_time, 60)
         ##################
         
+        # TODO: durchschnittliche zeit berechnen
         # TODO: Mehr Äusserungen mit f string in json 
+        # TODO: einbauen der Werte in den Bye-Screen
         speak_output = choose_utterance(mood, "bye") + f" Insgesamt hast du {user_correct_obj} Objekte richtig erraten und hast {user_minutes:0.0f} Minuten und {user_seconds:0.0f} Sekunden gebraucht. Und ich habe {alexa_correct_obj} richtig erraten und habe {alexa_minutes:0.0f} Minuten und {alexa_seconds:0.0f} Sekunden gebraucht."
 
         response_builder = handler_input.response_builder

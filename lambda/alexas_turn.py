@@ -57,6 +57,7 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
         act_object = attributes_manager.persistent_attributes["act_object"]
         
         # TODO: Die Äusserungen im json erweitern und hier wieder auswählen für mehr Varianz.
+        # TODO: Time-Out für den User einbauen: Wie oft darf falsch geklickt werden?
         
         if act_object == alexas_turn:
             statistics["user"]["correct_obj"] += 1
@@ -67,6 +68,7 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             statistics["user"]["duration_in_sec"] += delta_time
             statistics["user"]["start_timestamp"] = time.monotonic()
             
+            # TODO: Äußerungen vermehren und varianz rein!
             speak_output = "Yay, du hast es richtig erraten. Jetzt bist du wieder dran. Beschreib mir ein neues Objekt auf dem Bild!"
             ###
             # update persistent memory with new attributes

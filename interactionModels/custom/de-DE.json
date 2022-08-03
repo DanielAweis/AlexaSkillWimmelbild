@@ -318,6 +318,41 @@
         {
           "values": [
             {
+              "name": {
+                "value": "mathe"
+              }
+            },
+            {
+              "name": {
+                "value": "stift"
+              }
+            },
+            {
+              "name": {
+                "value": "fernrohr"
+              }
+            },
+            {
+              "name": {
+                "value": "konsole"
+              }
+            },
+            {
+              "name": {
+                "value": "fff"
+              }
+            },
+            {
+              "name": {
+                "value": "europa"
+              }
+            },
+            {
+              "name": {
+                "value": "globus"
+              }
+            },
+            {
               "id": "alexa_bee",
               "name": {
                 "value": "biene"
@@ -341,5 +376,5 @@
       ]
     }
   },
-  "version": "46"
+  "version": "47"
 }

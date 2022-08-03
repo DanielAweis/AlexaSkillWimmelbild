@@ -40,9 +40,7 @@ class BienenIntentHandler(AbstractRequestHandler):
         # and delete old speak_output statement 
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
-        ###
-        statistics = attributes_manager.persistent_attributes["statistics"]
-        ###
+        
         
         # if object_name not in already_mentioned
         if self.object_name not in already_mentioned:
@@ -61,7 +59,10 @@ class BienenIntentHandler(AbstractRequestHandler):
                 wrong_counter = 0
                 already_mentioned.clear()
                 speak_output = choose_utterance(mood, "no_stop")
-                
+        
+        # get statistics
+        statistics = attributes_manager.persistent_attributes["statistics"]
+               
         # update persistent memory with new wrong_counter and already_mentioned
         attributes = {
             "mood": mood, 

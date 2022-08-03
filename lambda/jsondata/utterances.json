@@ -122,6 +122,27 @@
         ],
         "alexa_biene": [
             "<amazon:emotion name='excited' intensity='medium'> Es ist ein kleines gelbes Insekt. na, weißt du was ich meine? dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_globus": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe den Globus. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_europa": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe Europa. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_fff": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe Fridays For Futer. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_konsole": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe die Konsole. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_fernrohr": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe das Fernrohr. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_stift": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe den Stift. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_mathe": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe Mathe. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
         ]
     },
     "bad_mood": {
@@ -247,6 +268,27 @@
         ],
         "alexa_biene": [
             "<amazon:emotion name='excited' intensity='low'> Okay, ich bin wohl wieder dran. So ein Mist. Klick das eklige Viech mit den Streifen an. </amazon:emotion>"
+        ],
+        "alexa_globus": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe den Globus. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_europa": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe Europa. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_fff": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe Fridays For Futer. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_konsole": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe die Konsole. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_fernrohr": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe das Fernrohr. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_stift": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe den Stift. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
+        ],
+        "alexa_mathe": [
+            "<amazon:emotion name='excited' intensity='medium'> Ich beschreibe Mathe. Du weißt, was ich beschreibe? Dann klicke es an! </amazon:emotion>"
         ]
     }
 }
