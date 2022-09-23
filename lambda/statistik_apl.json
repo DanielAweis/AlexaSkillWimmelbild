@@ -21,7 +21,6 @@
             "payload"
         ],
         "items": [
-            
             {
                 "type": "Container",
                 "width": "100vw",
@@ -43,46 +42,47 @@
                                 "width": "100vw",
                                 "height": "100vh",
                                 "items": [
-                                {
-                                    "type": "Container",
-                                    "width": "100vw",
-                                    "height": "100vh",
-                                    "items": [
-                                        {
-                                            "type": "Text",
-                                            "fontFamily": "comic sans, sans-serif",
-                                            "fontSize": "100dp",
-                                            "width": "100%",
-                                            "textAlign": "center",
-                                            "style": "textStylePrimary2",
-                                            "text": "<i>Statistik:</i>",
-                                            "maxLines": 2
-                                        },
-                                        {
-                                            "type": "Container",
-                                            "width": "700dp",
-                                            "height": "300dp",
-                                            "left": "320",
-                                            "top": "100",
-                                            "items": [
-                                                {
-                                                    "type": "Text",
-                                                    "width": "100%",
-                                                    "text": "Anzahl korrekter Objekte (Alexa): ${payload.statData.sources[0].correctCountAlexa} <br>Durchschnittliche Rundenzeit (Alexa): ${payload.statData.sources[0].AvTimeAlexa} <br><br> Anzahl korrekter Objekte (User): <br> Durchschnittliche Rundenzeit (User):"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                            {
-                                "source": "https://i.imgur.com/oldbozq.jpeg",
-                                "scale": "best-fill",
-                                "align": "center",
-                                "type": "Image",
-                                "width": "100vw",
-                                "height": "100vh"
-                            }
-                            ]
+                                    {
+                                        "type": "Container",
+                                        "width": "100vw",
+                                        "height": "100vh",
+                                        "items": [
+                                            {
+                                                "type": "Text",
+                                                "fontFamily": "comic sans, sans-serif",
+                                                "fontSize": "100dp",
+                                                "width": "100%",
+                                                "textAlign": "center",
+                                                "style": "textStylePrimary2",
+                                                "text": "<i>Statistik:</i>",
+                                                "maxLines": 2
+                                            },
+                                            {
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "width": "100%",
+                                                        "text": "Anzahl korrekter Objekte (Alexa): ${payload.statData.sources[0].correctCountAlexa} <br>Durchschnittliche Rundenzeit (Alexa): ${payload.statData.sources[0].AvTimeAlexa} <br><br> Anzahl korrekter Objekte (User): ${payload.statData.sources[0].correctCountUser} <br> Durchschnittliche Rundenzeit (User): ${payload.statData.sources[0].AvTimeUser} <br><br>"
+                                                    }
+                                                ],
+                                                "alignSelf": "center",
+                                                "type": "Container",
+                                                "width": "900",
+                                                "height": "300dp",
+                                                "left": "0",
+                                                "top": "100"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "source": "https://i.imgur.com/oldbozq.jpeg",
+                                        "scale": "best-fill",
+                                        "align": "center",
+                                        "type": "Image",
+                                        "width": "100vw",
+                                        "height": "100vh"
+                                    }
+                                ]
                             }
                         ]
                     }

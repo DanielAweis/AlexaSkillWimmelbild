@@ -59,12 +59,15 @@ class PersonalityIntentHandler(AbstractRequestHandler):
                 "user": {
                     "start_timestamp": 0,
                     "duration_in_sec": 0,
-                    "correct_obj":0
+                    "correct_obj":0,
+                    "selected_obj":0
                 },
                 "alexa": {
                     "start_timestamp": start_timestamp,
                     "duration_in_sec": 0,
-                    "correct_obj":0
+                    "correct_obj":0,
+                    "selected_obj":0,
+                    "already_mentioned": []
                 }
             }
         }  

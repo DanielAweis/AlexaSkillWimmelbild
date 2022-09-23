@@ -22,6 +22,7 @@ class BienenIntentHandler(AbstractRequestHandler):
     data_apl = load_apl_document("jsondata/data_apl_template.json")
     images = load_apl_document("images.json")
     
+    # Replace background image with image of object
     data_apl["templateData"]["properties"]["backgroundImage"]["sources"][0]["url"] = images[object_name]["image"]
     
     def can_handle(self, handler_input):
@@ -35,21 +36,19 @@ class BienenIntentHandler(AbstractRequestHandler):
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
         
-        ######## DW: TODO for all objects:
-        # copy and paste this and change the object name above
-        # and delete old speak_output statement 
+        # Setup persistent attributes, create already_mentioned and wrong_counter
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
         
         
-        # if object_name not in already_mentioned
+        # If object_name not in already_mentioned
         if self.object_name not in already_mentioned:
             # update bee into already_mentioned in persistent attributes
             already_mentioned.append(self.object_name)
             
             speak_output = choose_utterance(mood, self.object_name)
         
-        # if object was already_mentioned 
+        # If object was already_mentioned 
         else:
             wrong_counter += 1
             # check wrong_counter
@@ -60,10 +59,10 @@ class BienenIntentHandler(AbstractRequestHandler):
                 already_mentioned.clear()
                 speak_output = choose_utterance(mood, "no_stop")
         
-        # get statistics
+        # Get statistics
         statistics = attributes_manager.persistent_attributes["statistics"]
                
-        # update persistent memory with new wrong_counter and already_mentioned
+        # Update persistent memory with new wrong_counter and already_mentioned
         attributes = {
             "mood": mood, 
             "wrong_counter": wrong_counter, 
@@ -72,10 +71,10 @@ class BienenIntentHandler(AbstractRequestHandler):
         }
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()
-        ######## end copy and paste
 
         response_builder = handler_input.response_builder
         
+        # If device has a screen: 
         if get_supported_interfaces(
                 handler_input).alexa_presentation_apl is not None:
             response_builder.add_directive(

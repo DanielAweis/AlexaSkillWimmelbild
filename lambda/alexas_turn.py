@@ -1,4 +1,4 @@
-# DW: this handels the Event after Alexa described an object
+# DW: this handles the Event after Alexa described an object
 import time
 
 import ask_sdk_core.utils as ask_utils
@@ -61,6 +61,7 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
         
         if act_object == alexas_turn:
             statistics["user"]["correct_obj"] += 1
+            statistics["user"]["selected_obj"] += 1
             
             user_start_timestamp = statistics["user"]["start_timestamp"] 
             user_end_time = time.monotonic()
@@ -69,7 +70,7 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             statistics["user"]["start_timestamp"] = time.monotonic()
             
             # TODO: Äußerungen vermehren und varianz rein!
-            speak_output = "Yay, du hast es richtig erraten. Jetzt bist du wieder dran. Beschreib mir ein neues Objekt auf dem Bild!"
+            speak_output = choose_utterance(mood, "alexa_turn")
             ###
             # update persistent memory with new attributes
             attributes = {
@@ -95,8 +96,22 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             
             return response_builder.speak(speak_output).response
             
-        else: 
-            speak_output = "Mhhh, das meinte ich nicht. Versuch es nochmal! Klick ein anderes Objekt auf dem Bild an!"
+        else:
+            
+            statistics["user"]["selected_obj"] += 1
+            
+            # update persistent memory with new attributes
+            attributes = {
+                "mood": mood, 
+                "wrong_counter": wrong_counter, 
+                "already_mentioned": already_mentioned,
+                "statistics": statistics
+            }
+            attributes_manager.persistent_attributes.update(attributes)
+            attributes_manager.save_persistent_attributes()
+            ###
+            
+            speak_output = speak_output = choose_utterance(mood, "alexa_wrong")
             response_builder = handler_input.response_builder
             
             if get_supported_interfaces(
@@ -110,4 +125,5 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             
             return response_builder.speak(speak_output).response
             
+                
         

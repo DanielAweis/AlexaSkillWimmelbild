@@ -4,7 +4,7 @@ import json
 import boto3
 from botocore.exceptions import ClientError
 
-
+# Help function to generate content from media stored in
 def create_presigned_url(object_name):
     """Generate a presigned URL to share an S3 object with a capped expiration of 60 seconds
 
@@ -27,6 +27,7 @@ def create_presigned_url(object_name):
     # The response contains the presigned URL
     return response
 
+# Help function to read APL content from json file
 def load_apl_document(file_path):
     # type: (str) -> Dict[str, Any]
     """Load the apl json document at the path into a dict object."""

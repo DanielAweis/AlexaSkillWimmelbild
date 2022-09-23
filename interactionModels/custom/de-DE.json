@@ -49,6 +49,12 @@
           "name": "BienenIntent",
           "slots": [],
           "samples": [
+            "schwarze augen",
+            "lange nase",
+            "große nase",
+            "nase",
+            "wespe",
+            "maja",
             "stachel",
             "honig",
             "insekt",
@@ -71,6 +77,10 @@
           "name": "GlobusIntent",
           "slots": [],
           "samples": [
+            "blau und grün",
+            "drehung",
+            "drehen",
+            "dreht sich",
             "heimatplanet",
             "planet erde",
             "globus",
@@ -98,6 +108,10 @@
           "name": "KonsoleIntent",
           "slots": [],
           "samples": [
+            "man kann damit videospiele spielen",
+            "man kann damit zocken",
+            "man kann damit spielen",
+            "nintendo",
             "zocken",
             "switch",
             "videospiel",
@@ -112,6 +126,11 @@
           "name": "BuchIntent",
           "slots": [],
           "samples": [
+            "es hat seiten",
+            "seiten",
+            "wurm",
+            "bücherwurm",
+            "man kann es lesen",
             "literatur",
             "lesen",
             "roman",
@@ -124,6 +143,11 @@
           "name": "StiftIntent",
           "slots": [],
           "samples": [
+            "hat eine mine",
+            "mine",
+            "zum schreiben",
+            "zum malen",
+            "malen",
             "radierer",
             "bleistift",
             "schreiben",
@@ -182,6 +206,11 @@
           "name": "RainbowIntent",
           "slots": [],
           "samples": [
+            "viele farben",
+            "neben der konsole",
+            "über dem buchstabenblock",
+            "neben dem buchstabenblock",
+            "neben dem a",
             "erscheint bei Regen und Sonne",
             "bunt",
             "Regenbogen"
@@ -191,6 +220,13 @@
           "name": "UhrIntent",
           "slots": [],
           "samples": [
+            "unter dem buch",
+            "uhrzeit ablesen",
+            "zeigt die uhrzeit an",
+            "zeigt die zeit and",
+            "zeit",
+            "es hat zeiger",
+            "gelb",
             "ziffernblatt",
             "gelb und rund",
             "rund und gelb",
@@ -217,6 +253,13 @@
           "name": "DoktorIntent",
           "slots": [],
           "samples": [
+            "trägt eine brille",
+            "brille",
+            "hat eine brille",
+            "hält atom",
+            "gelbe haare",
+            "wissenschaftlerin",
+            "wissenschaftler",
             "behandelt kranke Menschen",
             "weißer Kittel",
             "blonde Haare",
@@ -240,6 +283,13 @@
           "name": "BoatIntent",
           "slots": [],
           "samples": [
+            "smiley",
+            "lächeln",
+            "es lächelt",
+            "gesicht",
+            "pink und grün",
+            "grün und pink",
+            "wasser",
             "gruenes boot",
             "Schiff",
             "schwimmt auf dem Wasser",
@@ -251,6 +301,12 @@
           "name": "SaturnIntent",
           "slots": [],
           "samples": [
+            "universum",
+            "himmel",
+            "sternenhimmel",
+            "gelber planet",
+            "mythologie",
+            "gott",
             "planet mit ring",
             "weltall",
             "planet",
@@ -376,5 +432,5 @@
       ]
     }
   },
-  "version": "47"
+  "version": "50"
 }

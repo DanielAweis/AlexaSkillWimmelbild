@@ -32,8 +32,10 @@ class NoIntentHandler(AbstractRequestHandler):
         mood = attributes_manager.persistent_attributes["mood"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
+        statistics = attributes_manager.persistent_attributes["statistics"]
         
         wrong_counter += 1
+        statistics["alexa"]["selected_obj"] += 1
         
         if wrong_counter <= 3:
             speak_output = choose_utterance(mood, "no_again")
@@ -47,7 +49,8 @@ class NoIntentHandler(AbstractRequestHandler):
         attributes = {
             "mood": mood, 
             "wrong_counter": wrong_counter, 
-            "already_mentioned": already_mentioned
+            "already_mentioned": already_mentioned,
+            "statistics": statistics
             
         }
         attributes_manager.persistent_attributes.update(attributes)
