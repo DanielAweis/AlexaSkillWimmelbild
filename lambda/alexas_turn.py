@@ -43,24 +43,26 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             slots = handler_input.request_envelope.request.intent.slots
             alexas_turn = slots["alexas_turn"].resolutions.resolutions_per_authority[0].values[0].value.id
         
-        # Identify chosen mood.
+        # Identify chosen mood, already_mentioned and statistics
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
-        
-        ###
         statistics = attributes_manager.persistent_attributes["statistics"]
-        ###
         
         # get actual described object
         act_object = attributes_manager.persistent_attributes["act_object"]
         
-        # TODO: Die Äusserungen im json erweitern und hier wieder auswählen für mehr Varianz.
-        # TODO: Time-Out für den User einbauen: Wie oft darf falsch geklickt werden?
-        
-        if act_object == alexas_turn:
-            statistics["user"]["correct_obj"] += 1
+        if act_object == alexas_turn or statistics["user"]["wrong_counter"] > 2:
+            # change turn when user clicked more than 3 times wrong
+            if statistics["user"]["wrong_counter"] > 2: 
+                #speak_output = choose_utterance(mood, "alexa_turn")
+                speak_output = choose_utterance(mood, "alexa_switch")
+                
+            else: 
+                speak_output = choose_utterance(mood, "alexa_turn")
+                statistics["user"]["correct_obj"] += 1
+            
             statistics["user"]["selected_obj"] += 1
             
             user_start_timestamp = statistics["user"]["start_timestamp"] 
@@ -69,9 +71,6 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             statistics["user"]["duration_in_sec"] += delta_time
             statistics["user"]["start_timestamp"] = time.monotonic()
             
-            # TODO: Äußerungen vermehren und varianz rein!
-            speak_output = choose_utterance(mood, "alexa_turn")
-            ###
             # update persistent memory with new attributes
             attributes = {
                 "mood": mood, 
@@ -81,7 +80,6 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             }
             attributes_manager.persistent_attributes.update(attributes)
             attributes_manager.save_persistent_attributes()
-            ###
             
             response_builder = handler_input.response_builder
             
@@ -97,8 +95,8 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             return response_builder.speak(speak_output).response
             
         else:
-            
             statistics["user"]["selected_obj"] += 1
+            statistics["user"]["wrong_counter"] += 1
             
             # update persistent memory with new attributes
             attributes = {
@@ -109,9 +107,8 @@ class AlexasTurnIntentHandler(AbstractRequestHandler):
             }
             attributes_manager.persistent_attributes.update(attributes)
             attributes_manager.save_persistent_attributes()
-            ###
             
-            speak_output = speak_output = choose_utterance(mood, "alexa_wrong")
+            speak_output = choose_utterance(mood, "alexa_wrong")
             response_builder = handler_input.response_builder
             
             if get_supported_interfaces(

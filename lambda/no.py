@@ -43,7 +43,6 @@ class NoIntentHandler(AbstractRequestHandler):
             wrong_counter = 0
             already_mentioned.clear()
             speak_output = choose_utterance(mood, "no_stop")
-            # TODO: Alexas_Turn
             
         # update persistent memory with new wrong_counter and already_mentioned
         attributes = {

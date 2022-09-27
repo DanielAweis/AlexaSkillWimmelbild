@@ -23,17 +23,16 @@ Aufgabenteilung:
         - DONE: für alle 10 Objekte (Alexa) einen Slot Values im alexa_turn Slot und alle werte geprüft und geadded
         - DONE: in allen schon implementierten Objekten die statistics in persistent_attributes einfügen
         - DONE: Turn-Taking ausbauen
-        - Speichern genannter Objekte (Boot, Biene Saturn)
-        - nach 10 Objekten von Alexa -> bye bildschirm
-        (in yes und no intent einbauen)
-        - Turntaking nach 3 mal Falsch geraten
+        - DONE: nach 10 Objekten von Alexa -> bye bildschirm
+        - DONE: Turntaking nach 3 mal Falsch geraten
+        - DONE BERICHT: Implementation und besser machen 
     Lea: 
         - DONE: Bericht einrichten
-        - BYE Intent Voiceline mit bye utterance verknüpfen
+        - DONE BYE Intent Voiceline mit bye utterance verknüpfen
         - DONE alexas turn zeile 73
-        - in den utterances.json sind jetzt ganz simple Äußerungen für alexas_turn
+        - DONE in den utterances.json sind jetzt ganz simple Äußerungen für alexas_turn
           Hier muss mehr Varianz rein und auch das amazon:emotion name= muss angepasst werden
-        - BERICHT: Seiten schreiben zu Äußerungen, Modell und Evaluation
+        - DONE BERICHT: Seiten schreiben zu Äußerungen, Modell und Qualitätsmerkmalen zur späteren Auswertung
         
 Robo-Lab:
     - Fotos von Endbildschirmen machen

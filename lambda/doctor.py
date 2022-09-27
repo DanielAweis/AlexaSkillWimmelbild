@@ -35,9 +35,6 @@ class DoktorIntentHandler(AbstractRequestHandler):
         attributes_manager = handler_input.attributes_manager
         mood = attributes_manager.persistent_attributes["mood"]
         
-        ######## DW: TODO for all objects:
-        # copy and paste this and change the object name above
-        # and delete old speak_output statement 
         already_mentioned = attributes_manager.persistent_attributes["already_mentioned"]
         wrong_counter = attributes_manager.persistent_attributes["wrong_counter"]
         
@@ -71,7 +68,6 @@ class DoktorIntentHandler(AbstractRequestHandler):
         }
         attributes_manager.persistent_attributes.update(attributes)
         attributes_manager.save_persistent_attributes()
-        ######## end copy and paste
 
         response_builder = handler_input.response_builder
         

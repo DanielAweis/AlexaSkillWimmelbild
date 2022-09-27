@@ -6,6 +6,9 @@
         {
           "name": "AMAZON.CancelIntent",
           "samples": [
+            "tschüß",
+            "tschau",
+            "bye",
             "ich will nicht mehr",
             "spielende",
             "ende das spiel",
@@ -432,5 +435,5 @@
       ]
     }
   },
-  "version": "50"
+  "version": "52"
 }

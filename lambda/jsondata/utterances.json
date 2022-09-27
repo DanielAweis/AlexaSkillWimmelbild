@@ -68,7 +68,10 @@
         ],
         "bye_no_more_objects": [
             "<amazon:emotion name='excited' intensity='low'> Wie schade, dass ich all meine Objekte schon beschrieben habe! Bis zum nächsten Mal und hab noch einen wunderbaren Tag.</amazon:emotion>",
-            "<amazon:emotion name='excited' intensity='low'> Vielen Dank fürs Spielen, hat mir echt Spass gemacht, aber leider fallen mir keine Objekte mehr ein. Bis bald!! </amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='low'> Vielen Dank fürs Spielen, hat mir echt Spass gemacht, aber leider fallen mir keine Objekte mehr ein. Bis bald!! </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Oh man, wie toll, dass du mit mir gespielt hast! Leider bin ich jetzt auch auß der Puste. Wir sehen uns! </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='low'> Yay, du hast das letzte Objekt erraten! Hoffentlich sehen wir uns bald wieder! </amazon:emotion>"
+            
         ],
         "dolphin": [
             "<amazon:emotion name='excited' intensity='medium'> Oh wunderbar, du beschreibst den Delfin, ja?</amazon:emotion>",
@@ -156,7 +159,9 @@
             "<amazon:emotion name='excited' intensity='medium'> Du musst jetzt was erraten! Das, worauf du klicken sollst, hat einen Bildschirm. </amazon:emotion>"
         ],
         "alexa_fernrohr": [
-            "<amazon:emotion name='excited' intensity='medium'> Nach den Sternen zu greifen, wie cool ist das denn! Klick auf das Instrument, mit dem man besonders gut den Sternenhimmel beobachten kann. </amazon:emotion>"
+            "<amazon:emotion name='excited' intensity='medium'> Nach den Sternen zu greifen, wie cool ist das denn! Klick auf das Instrument, mit dem man besonders gut den Sternenhimmel beobachten kann. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Ich bin endlich an der Reihe! Mit diesem Objekt kann man die Sternzeichen beobachten - Na, was ist es? </amazon:emotion>"
+            
         ],
         "alexa_stift": [
             "<amazon:emotion name='excited' intensity='medium'> Au ja, ich bin dran! Klick auf den tollen Gegenstand, welchen wir zum Schreiben auf Papier benutzen!</amazon:emotion>",
@@ -179,6 +184,11 @@
             "<amazon:emotion name='excited' intensity='low'> Wie schade! Das war nicht das richtige Objekt, aber du kannst es nochmal probieren. </amazon:emotion>",
             "<amazon:emotion name='excited' intensity='low'> Mist, das war leider nicht korrekt! Keine Sorge, du bekommst noch eine Chance. </amazon:emotion>",
             "<amazon:emotion name='excited' intensity='low'> Schade, das war nicht richtig! Du schaffst das aber, ich glaube an dich! </amazon:emotion>"
+        ],
+        "alexa_switch": [
+            "<amazon:emotion name='excited' intensity='medium'> Ohje, ich habe das Gefühl, dass das erraten dir etwas schwer fällt! Keine Sorge, du kannst auch erstmal wieder etwas beschreiben. </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Leider wieder falsch! Lass uns einfach wieder tauschen. Beschreibe etwas auf diesem tollen Wimmelbild! </amazon:emotion>",
+            "<amazon:emotion name='excited' intensity='medium'> Auweia, leider wieder falsch! Komm, lass uns einfach tauschen - ich errate wieder, du beschreibst! Los gehts! </amazon:emotion>"
         ]
     },
     "bad_mood": {
@@ -243,16 +253,16 @@
             "<amazon:emotion name='disappointed' intensity='low'> Mh, mir fällt doch wieder nur {} ein. Gibt dir jetzt doch mal ein bisschen mehr Mühe mit der Erklärung </amazon:emotion>"
         ],
         "bye": [
-            "<amazon:emotion name='disappointed' intensity='low'> Na endlich ist dir langweilig. Jetzt kann ich meine Ruhe haben! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='low'> Oh man, ich dachte schon, ich muss ewig mit dir spielen. Endlich Ruhe! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='low'> Boa, ich dachte schon dir wird nie langweilig. Endlich hab ich meine Ruhe!</amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='low'> Puh, na endlich hast du keine Lust mehr! Tschüß! </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='medium'> Na endlich ist dir langweilig. Jetzt kann ich meine Ruhe haben! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Oh man, ich dachte schon, ich muss ewig mit dir spielen. Endlich Ruhe! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Boa, ich dachte schon dir wird nie langweilig. Endlich hab ich meine Ruhe!</amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Puh, na endlich hast du keine Lust mehr! Tschüß! </amazon:emotion>"
         ],
         "bye_no_more_objects": [
-            "<amazon:emotion name='disappointed' intensity='low'> Oh mir fallen jetzt keine weiteren Objekte zum Beschreiben ein. Jetzt kann ich meine Ruhe haben! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='low'> Oh man, ich dachte schon, ich muss ewig mit dir spielen. Aber ich hab jetzt keine Lust mehr! </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='low'> Mir fällt jetzt nichts mehr ein!</amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='low'> Du hast all meine Objekte erraten! Tschüß! </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='medium'> Oh, mir fallen jetzt keine weiteren Objekte zum Beschreiben ein. Jetzt kann ich meine Ruhe haben! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='high'> Oh man, ich dachte schon, ich muss ewig mit dir spielen. Aber ich hab jetzt keine Lust mehr! </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='high'> Mir fällt jetzt nichts mehr ein!</amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Du hast all meine Objekte erraten! Tschüß! </amazon:emotion>"
         ],
         "dolphin": [
             "<amazon:emotion name='disappointed' intensity='medium'> Ja ja, ok, ich hab es verstanden, du beschreibst den Delfin, ja?</amazon:emotion>",
@@ -338,7 +348,7 @@
         "alexa_konsole": [
             "<amazon:emotion name='disappointed' intensity='medium'> Hmm, ich bin dran. Das Ding hat Knöpfe und man kann damit spielen. Alleine.  </amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='medium'> So, dann muss ich wohl wieder was beschreiben. Man kann Videospiele darauf spielen.  </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='medium'> So, dann muss ich wohl wieder was beschreiben. Man kann Videospiele darauf spielen.  </amazon:emotion>"
+            "<amazon:emotion name='disappointed' intensity='medium'> Okay, puh, dann beschreib ich wieder was. Es sieht eine Nintendo Switch aus. Klick drauf, wenn du wirklich unbedingt weiterspielen willst.  </amazon:emotion>"
             
         ],
         "alexa_fernrohr": [
@@ -368,7 +378,13 @@
             "<amazon:emotion name='disappointed' intensity='medium'> Echt? Das hast du falsch erraten? Aha. Na dann probier es nochmal. </amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='medium'> Puh, war das echt zu schwer für dich? Probiers nochmal. </amazon:emotion>",
             "<amazon:emotion name='disappointed' intensity='medium'> Man, bekommst du das echt nicht auf die Reihe? Klick einfach auf irgendetwas, das passt. Das hier war es auf jeden Fall nicht. </amazon:emotion>",
-            "<amazon:emotion name='disappointed' intensity='medium'> Falsch. Geb dir mal mehr Mühe. Ich will auch nicht hier sein. Klick nochmal."
+            "<amazon:emotion name='disappointed' intensity='medium'> Falsch. Geb dir mal mehr Mühe. Ich will auch nicht hier sein. Klick nochmal. </amazon:emotion>"
+        ],
+        "alexa_switch": [
+            "<amazon:emotion name='disappointed' intensity='medium'> Ich glaub echt, du bekommst das einfach nicht auf die Reihe. Du bist erstmal wieder mit Beschreiben dran, okay? Herrjemine. </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Okay, so, ich hab die Nase voll, lass uns wieder tauschen und du beschreibst was. </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Puh. Anscheinend ist das hier irgendwie wirklich zu überfordernd für dich. So, du beschreibst mir wieder etwas auf dem Bild. </amazon:emotion>",
+            "<amazon:emotion name='disappointed' intensity='medium'> Ach, ich geb auf - wir tauschen wieder Rollen. Beschreib was auf dem Bild. Oder verabschied dich, ist mir auch egal. </amazon:emotion>" 
         ]
     }
 }

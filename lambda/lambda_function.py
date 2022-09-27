@@ -24,7 +24,6 @@ from ask_sdk_s3.adapter import S3Adapter
 s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
 
 # DW: Import custom intent handler
-# TODO: Nicht vergessen diese auch unten beim CustomSkillBuilder zu adden
 # personality
 from mood_choice import PersonalityIntentHandler
 
@@ -119,26 +118,6 @@ class HelpIntentHandler(AbstractRequestHandler):
                 .response
         )
 
-"""class CancelOrStopIntentHandler(AbstractRequestHandler):
-    #Single handler for Cancel and Stop Intent.
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-        return (ask_utils.is_intent_name("AMAZON.CancelIntent")(handler_input) or
-                ask_utils.is_intent_name("AMAZON.StopIntent")(handler_input))
-
-    def handle(self, handler_input):
-        # Identify chosen modus.
-        attributes_manager = handler_input.attributes_manager
-        mood = attributes_manager.persistent_attributes["mood"]
-        
-        speak_output = choose_utterance(mood, "bye")
-
-        return (
-            handler_input.response_builder
-                .speak(speak_output)
-                .response
-        )"""
-
 class FallbackIntentHandler(AbstractRequestHandler):
     """Single handler for Fallback Intent."""
     def can_handle(self, handler_input):
@@ -148,8 +127,6 @@ class FallbackIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In FallbackIntentHandler")
-        
-        # TODO: Wann wird das getriggert? Und soll immer getriggert werden, wenn sie keine Ahnung hat.
         
         # Identify chosen modus.
         attributes_manager = handler_input.attributes_manager
@@ -227,7 +204,6 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 # sb = SkillBuilder()
 sb = CustomSkillBuilder(persistence_adapter=s3_adapter)
 
-# TODO: Hier CustomSkillBuilder anpassen!
 # imported Intents:
 sb.add_request_handler(PersonalityIntentHandler())
 sb.add_request_handler(YesIntentHandler())

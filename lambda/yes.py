@@ -8,8 +8,6 @@ from ask_sdk_model.interfaces.alexa.presentation.apl import RenderDocumentDirect
 from utils import load_apl_document, create_presigned_url # APL helper functions
 from utterances import choose_utterance, UTTERANCES
 
-from bye import CancelOrStopIntentHandler
-
 
 class YesIntentHandler(AbstractRequestHandler):
     """
@@ -136,7 +134,6 @@ class YesIntentHandler(AbstractRequestHandler):
             self.data_apl["statData"]["sources"][0]["AvTimeAlexa"] = f"{alexa_minutes:0.0f}:{alexa_seconds:0.0f} min"
             self.data_apl["statData"]["sources"][0]["AvTimeUser"] = f"{user_minutes:0.0f}:{user_seconds:0.0f} min"
             
-            # TODO: Mehr Äusserungen mit f string in json 
             speak_output = choose_utterance(mood, "bye_no_more_objects") + f""" Insgesamt hast du {user_correct_obj} Objekte richtig erraten und 
             hast pro objekt im Durchschnitt {user_minutes:0.0f} Minuten und {user_seconds:0.0f} Sekunden gebraucht. Und ich habe {alexa_correct_obj} richtig erraten 
             und habe im Durchschnitt {alexa_minutes:0.0f} Minuten und {alexa_seconds:0.0f} Sekunden gebraucht."""
